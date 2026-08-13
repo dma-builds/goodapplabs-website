@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoodApp Labs</title>
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #faf7f1; }
+  a { color: #191714; }
+  a:hover { color: #e1523d; }
+  @keyframes rise { from { transform: translateY(105%); } to { transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pop { 0% { transform: scale(0); } 70% { transform: scale(1.25); } 100% { transform: scale(1); } }
+  @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+  @keyframes drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-4%,-3%,0) scale(1.12); } }
+</style>
+</helmet>
+<div style="background:#faf7f1;color:#191714;font-family:'Instrument Sans','Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden">
+  <div style="position:fixed;inset:-10%;pointer-events:none;z-index:0;background:radial-gradient(110% 85% at 88% 108%, rgba(20,124,196,0.34), rgba(20,124,196,0) 62%), radial-gradient(85% 65% at 6% 102%, rgba(34,158,178,0.28), rgba(34,158,178,0) 66%);animation:drift 22s ease-in-out infinite alternate"></div>
+
+  <header style="position:relative;z-index:1;padding:32px 44px;max-width:1240px;width:100%;box-sizing:border-box;margin:0 auto;display:flex;align-items:center;gap:11px;opacity:0;animation:fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s forwards">
+    <span style="width:11px;height:11px;border-radius:50%;background:#e1523d;display:block;animation:pop 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.5s backwards, breathe 4.5s ease-in-out 1.6s infinite"></span>
+    <span style="font-size:16px;font-weight:500;letter-spacing:-0.015em">GoodApp Labs</span>
+  </header>
+
+  <main style="position:relative;z-index:1;flex:1;display:flex;align-items:center;max-width:1240px;width:100%;box-sizing:border-box;margin:0 auto;padding:72px 44px 96px">
+    <div style="display:grid;gap:38px">
+      <h1 style="font-family:'Figtree',Helvetica,sans-serif;font-size:clamp(52px,9.2vw,136px);font-weight:500;line-height:0.94;letter-spacing:-0.04em;margin:0;display:flex;flex-wrap:wrap;column-gap:0.26em;text-wrap:pretty">
+        <span style="display:block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.12em"><span style="display:block;animation:rise 0.95s cubic-bezier(0.22,1,0.36,1) 0.25s backwards">Build</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.12em"><span style="display:block;color:#e1523d;animation:rise 0.95s cubic-bezier(0.22,1,0.36,1) 0.34s backwards">good</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.12em"><span style="display:block;animation:rise 0.95s cubic-bezier(0.22,1,0.36,1) 0.43s backwards">apps.</span></span>
+      </h1>
+      <p style="font-size:21px;line-height:1.55;max-width:40ch;color:#5f5850;margin:0;opacity:0;animation:fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.72s forwards;text-wrap:pretty">An independent studio building good apps made with care. First one coming soon.</p>
+    </div>
+  </main>
+
+  <footer style="position:relative;z-index:1;opacity:0;animation:fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.95s forwards">
+    <div style="max-width:1240px;margin:0 auto;padding:26px 44px 40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:baseline;font-size:15px;color:#847c72;border-top:1px solid #ece5d8">
+      <a href="mailto:hello@goodapplabs.ai" style="text-decoration:none;color:#191714;padding-top:26px;border-bottom:1px solid #d9dcd2;transition:border-color 0.35s ease,color 0.35s ease" style-hover="border-bottom-color:#e1523d;color:#e1523d">hello@goodapplabs.ai</a>
+      <div style="display:flex;gap:26px;align-items:baseline;padding-top:26px">
+        <a href="/privacy" style="color:#847c72;text-decoration:none;transition:color 0.3s ease" style-hover="color:#191714">Privacy Policy</a>
+        <span>© 2026 GoodApp Labs LLC</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>
