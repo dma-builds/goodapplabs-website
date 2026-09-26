@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Week 1 Update · GoodApp Labs</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Figtree:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f1; --ink: #191714; --muted: #5f5850; --faint: #847c72; --rule: #ece5d8; --accent: #e1523d; --card: #fff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--ink); }
+  a:hover { color: var(--accent); }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 32px 20px 72px; }
+  header { display: flex; align-items: center; gap: 11px; margin-bottom: 56px; }
+  header .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--accent); }
+  header a { font-size: 16px; font-weight: 500; letter-spacing: -0.015em; text-decoration: none; }
+  .meta { font-size: 14px; color: var(--faint); letter-spacing: 0.02em; text-transform: uppercase; margin: 0 0 12px; }
+  h1 { font-family: 'Figtree', Helvetica, sans-serif; font-size: clamp(36px, 7vw, 52px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 24px; }
+  h2 { font-family: 'Figtree', Helvetica, sans-serif; font-size: 22px; font-weight: 600; letter-spacing: -0.015em; margin: 48px 0 12px; }
+  p, ul { margin: 0 0 16px; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  .tldr { background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 10px; padding: 18px 22px; color: var(--muted); }
+  .tldr strong { color: var(--ink); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 16px 0 20px; }
+  .stat { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; }
+  .stat b { display: block; font-family: 'Figtree', Helvetica, sans-serif; font-size: 30px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+  .stat span { display: block; font-size: 14px; line-height: 1.4; color: var(--muted); margin-top: 4px; }
+  .pipeline { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 16px; padding: 0; list-style: none; font-size: 14px; }
+  .pipeline li { margin: 0; padding: 6px 12px; border-radius: 6px; border: 1px dashed #d8cfbf; color: var(--faint); }
+  .pipeline li.now { border: 1px solid var(--accent); background: var(--accent); color: #fff; font-weight: 600; }
+  figure { margin: 8px 0 20px; display: flex; align-items: center; gap: 18px; }
+  figure img { width: 120px; height: 120px; border-radius: 12px; image-rendering: pixelated; flex: none; }
+  figcaption { font-size: 15px; color: var(--muted); }
+  .signoff { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); color: var(--muted); }
+  footer { margin-top: 56px; font-size: 14px; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><span class="dot"></span><a href="/">GoodApp Labs</a></header>
+
+  <p class="meta">Update #1 · September 25, 2026</p>
+  <h1>Week one: we're off.</h1>
+
+  <p class="tldr"><strong>TL;DR:</strong> Three days in as a full-time company. The business is set up and funded, we have a logo, and the first piece of our app-making machine (finding product ideas) is already running.</p>
+
+  <h2>Why GoodApp Labs</h2>
+  <p>I want to build products with AI. More specifically, I want to build a system that turns out lots of really good apps.</p>
+  <p>For us, “good” means an app:</p>
+  <ul>
+    <li><strong>Is great to use.</strong> A high-quality experience, start to finish.</li>
+    <li><strong>Plays fair.</strong> It won't trick people into paying more than they meant to, collect more data than it needs, handle data carelessly, or hook people with addictive loops.</li>
+    <li><strong>Gives back.</strong> A portion of each app's revenue goes to a charity connected to that app.</li>
+  </ul>
+
+  <h2>What matters</h2>
+  <p>Besides building good products, two things are really important to me:</p>
+  <ul>
+    <li><strong>Always be learning.</strong></li>
+    <li><strong>Don't forget to have fun.</strong></li>
+  </ul>
+
+  <h2>Goals</h2>
+  <div class="stats">
+    <div class="stat"><b>24</b><span>products shipped in 24 months (8 in year one, 16 in year two)</span></div>
+    <div class="stat"><b>⅔</b><span>target success rate (over $50K revenue within 12–24 months)</span></div>
+    <div class="stat"><b>50</b><span>weekly updates a year, shared internally and publicly</span></div>
+  </div>
+  <p>We'll prioritize ideas that could reach <strong>$100K (25%) to $500K (8%)</strong> in revenue within 12–24 months.</p>
+
+  <h2>This week</h2>
+  <ul>
+    <li><strong>Business setup.</strong> We have our EIN, and the business bank account is open with $7,500 of initial funding. A referral bonus means our first $250 in revenue is on its way.</li>
+    <li><strong>A logo.</strong> It may change later, but it's a great start.</li>
+  </ul>
+  <figure>
+    <img src="/updates/img/gapple.jpg" alt="GoodApp Labs logo: a pixel-art golden apple on a sky-blue background">
+    <figcaption>Inspired by the golden apple (“gapple”) from Minecraft.</figcaption>
+  </figure>
+  <ul>
+    <li><strong>Automation, starting with ideas.</strong> We've sketched out every step we plan to automate, and this week we started on the first one:</li>
+  </ul>
+  <ol class="pipeline">
+    <li class="now">Ideation</li><li>Prioritization</li><li>Research &amp; design</li><li>Build</li><li>Go-to-market</li>
+  </ol>
+  <p><em>Scout agents</em> search App Store reviews and other sources for inspiration. So far, App Store reviews have been the most useful. An <em>inventor agent</em> (still in progress) will turn those finds into a weekly batch of product ideas, each rated on market size and effort.</p>
+
+  <p class="signoff"><strong>Bottom line:</strong> It's been a fun three days. I've learned a lot, and we've already built our first internal product. It was a great first week.<br><br>David</p>
+
+  <footer>© 2026 GoodApp Labs LLC · Internal, please don't share</footer>
+</div>
+</body>
+</html>
