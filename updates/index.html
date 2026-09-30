@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Updates · GoodApp Labs</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Figtree:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f1; --ink: #191714; --muted: #5f5850; --faint: #847c72; --rule: #ece5d8; --accent: #d98a17; --card: #fff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--ink); }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 32px 20px 72px; }
+  header { display: flex; align-items: center; gap: 11px; margin-bottom: 56px; }
+  header .dot { display: block; margin-top: -1px; }
+  header a { font-size: 16px; font-weight: 500; letter-spacing: -0.015em; text-decoration: none; }
+  h1 { font-family: 'Figtree', Helvetica, sans-serif; font-size: clamp(36px, 7vw, 52px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 12px; }
+  .lede { color: var(--muted); margin: 0 0 40px; }
+  .posts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .posts a { display: flex; align-items: baseline; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--rule); text-decoration: none; }
+  .posts a:hover .title { color: var(--accent); }
+  .date { flex: none; width: 96px; font-size: 14px; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .title { display: block; font-family: 'Figtree', Helvetica, sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -0.015em; transition: color 0.2s ease; }
+  .summary { display: block; font-size: 15px; color: var(--muted); margin-top: 2px; }
+  footer { margin-top: 56px; font-size: 14px; color: var(--faint); }
+  @media (max-width: 480px) { .posts a { flex-direction: column; gap: 4px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img class="dot" src="/apple.svg" alt="" width="15" height="15"><a href="/">GoodApp Labs</a></header>
+
+  <h1>Updates</h1>
+  <p class="lede">Weekly notes on what we built, what we learned, and where we're headed.</p>
+
+  <!-- Newest first. Add each new post to the top of this list. -->
+  <ul class="posts">
+    <li><a href="/updates/2026-09-25">
+      <span class="date">Sep 25, 2026</span>
+      <span><span class="title">#1 · Week one: we're off.</span><span class="summary">Business set up and funded, a logo, and our first idea-finding agents running.</span></span>
+    </a></li>
+  </ul>
+
+  <footer>© 2026 GoodApp Labs LLC · Internal, please don't share</footer>
+</div>
+</body>
+</html>

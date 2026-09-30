@@ -1,9 +1,12 @@
-// Basic auth for everything under /updates (internal investor updates).
+// Basic auth for the /updates index page. Individual posts stay public so they're
+// easy to share by link; the index is what's protected.
 // Override the defaults with UPDATES_USER / UPDATES_PASS vars in the Cloudflare dashboard.
+const PROTECTED = new Set(["/updates", "/updates/", "/updates/index.html"]);
+
 export default {
   async fetch(request, env) {
     const { pathname } = new URL(request.url);
-    if (pathname !== "/updates" && !pathname.startsWith("/updates/")) {
+    if (!PROTECTED.has(pathname)) {
       return env.ASSETS.fetch(request);
     }
 
