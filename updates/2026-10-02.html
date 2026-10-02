@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Week 2 Update · GoodApp Labs</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Figtree:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f1; --ink: #191714; --muted: #5f5850; --faint: #847c72; --rule: #ece5d8; --accent: #d98a17; --card: #fff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--ink); }
+  a:hover { color: var(--accent); }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 32px 20px 72px; }
+  header { display: flex; align-items: center; gap: 11px; margin-bottom: 56px; }
+  header .dot { display: block; margin-top: -1px; }
+  header a { font-size: 16px; font-weight: 500; letter-spacing: -0.015em; text-decoration: none; }
+  .meta { font-size: 14px; color: var(--faint); letter-spacing: 0.02em; text-transform: uppercase; margin: 0 0 12px; }
+  h1 { font-family: 'Figtree', Helvetica, sans-serif; font-size: clamp(36px, 7vw, 52px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 24px; }
+  h2 { font-family: 'Figtree', Helvetica, sans-serif; font-size: 22px; font-weight: 600; letter-spacing: -0.015em; margin: 48px 0 12px; }
+  h3 { font-family: 'Figtree', Helvetica, sans-serif; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin: 32px 0 8px; }
+  h3 .n { color: var(--accent); margin-right: 6px; }
+  p, ul { margin: 0 0 16px; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  .tldr { background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 10px; padding: 18px 22px; color: var(--muted); }
+  .tldr strong { color: var(--ink); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 16px 0 20px; }
+  .stat { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; }
+  .stat b { display: block; font-family: 'Figtree', Helvetica, sans-serif; font-size: 30px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+  .stat span { display: block; font-size: 14px; line-height: 1.4; color: var(--muted); margin-top: 4px; }
+  .steps { counter-reset: step; list-style: none; margin: 4px 0 16px; padding: 0; background: var(--card); border: 1px solid var(--rule); border-radius: 10px; }
+  .steps li { counter-increment: step; display: flex; gap: 12px; margin: 0; padding: 10px 16px; font-size: 16px; line-height: 1.45; border-top: 1px solid var(--rule); }
+  .steps li:first-child { border-top: 0; }
+  .steps li::before { content: counter(step); flex: none; width: 22px; height: 22px; border-radius: 50%; background: #fbf0dc; color: #8a5a0f; font-size: 13px; font-weight: 600; display: grid; place-items: center; margin-top: 1px; }
+  .ideas { display: grid; gap: 10px; margin: 12px 0 8px; }
+  .idea { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; }
+  .idea .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .idea b { font-family: 'Figtree', Helvetica, sans-serif; font-size: 18px; font-weight: 600; }
+  .idea .size { flex: none; font-size: 14px; font-weight: 600; color: #8a5a0f; background: #fbf0dc; border-radius: 999px; padding: 2px 10px; }
+  .idea p { margin: 4px 0 0; font-size: 16px; color: var(--muted); line-height: 1.5; }
+  .note { font-size: 14px; color: var(--faint); }
+  figure { margin: 12px 0 24px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 10px; }
+  figure.narrow img { max-width: 360px; }
+  figcaption { font-size: 14px; color: var(--faint); margin-top: 8px; }
+  .signoff { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); color: var(--muted); }
+  footer { margin-top: 56px; font-size: 14px; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img class="dot" src="/apple.svg" alt="" width="15" height="15"><a href="/">GoodApp Labs</a></header>
+
+  <p class="meta">Update #2 · October 2, 2026</p>
+  <h1>Week two: building HQ.</h1>
+
+  <p class="tldr"><strong>TL;DR:</strong> The LLC's basics are done, we have a new work computer, and we built HQ: our internal home for three new agent-powered tools. Next week we announce GoodApp Labs and start wrapping up our first app.</p>
+
+  <h2>The business</h2>
+  <ul>
+    <li><strong>Paperwork done.</strong> We registered for a San Francisco business license, paid our California taxes, and our business bank accounts and cards are fully set up.</li>
+    <li><strong>A new MacBook Pro.</strong> This is our biggest investment so far ($3,914) and our most important asset, since it's where our coding agents do their work. Migrating everything over took two full days.</li>
+  </ul>
+  <div class="stats">
+    <div class="stat"><b>2×</b><span>processing power (M5 Pro chip)</span></div>
+    <div class="stat"><b>3×</b><span>memory (48GB)</span></div>
+    <div class="stat"><b>4×</b><span>storage (1TB)</span></div>
+  </div>
+
+  <h2>HQ: our internal tools</h2>
+  <p>We built HQ, an internal site that holds all of our agents and tools, and finished three tools for it this week. Seeing tools built for exactly how I work, and watching them actually work, has been truly delightful.</p>
+  <figure class="narrow">
+    <a href="/updates/img/2026-10-02-hq.jpg"><img src="/updates/img/2026-10-02-hq.jpg" alt="HQ home page listing the Product Idea Hub, Expenses and Agent Usage tools"></a>
+  </figure>
+
+  <h3><span class="n">1</span>Product Idea Hub</h3>
+  <p>This is our pipeline for finding what to build:</p>
+  <ol class="steps">
+    <li><span><strong>Scouts</strong> (2 agents) collect feedback from Reddit, YouTube and App Store reviews.</span></li>
+    <li><span><strong>The Inventor</strong>, an agent with my product taste, turns that feedback into product ideas with revenue sizing.</span></li>
+    <li><span><strong>I vet</strong> the ideas and pick my favorites.</span></li>
+    <li><span><strong>The Idea Depot</strong> stores them until we take on projects one by one.</span></li>
+  </ol>
+  <p>The first fully unmonitored run is next week. The top 3 ideas in the Depot so far:</p>
+  <div class="ideas">
+    <div class="idea"><div class="top"><b>Warm Intro</b><span class="size">~$67M/yr</span></div><p>Finds people you already know at companies hiring for your role, and helps you ask them for a referral.</p></div>
+    <div class="idea"><div class="top"><b>Usuals</b><span class="size">~$138M/yr</span></div><p>A free app that plans the week's dinners from recipes you've saved and what everyone in the house likes.</p></div>
+    <div class="idea"><div class="top"><b>Porch</b><span class="size">~$360M/yr</span></div><p>Picks the week's best photos of your kids and sends them to the grandparents after one quick approval.</p></div>
+  </div>
+  <p class="note">Figures are estimated yearly market size, not revenue we expect to earn.</p>
+  <figure>
+    <a href="/updates/img/2026-10-02-idea-depot.jpg"><img src="/updates/img/2026-10-02-idea-depot.jpg" alt="Idea Depot showing Warm Intro and Usuals with pitch, pricing and market sizing"></a>
+    <figcaption>Each idea comes with a pitch, pricing, market sizing and build estimate.</figcaption>
+  </figure>
+
+  <h3><span class="n">2</span>Expenses</h3>
+  <p>Every weekday, an agent pulls receipts from email and transactions from the bank into one log, with duplicates merged. It turned out to be more complex than expected: beyond tracking spending, it has to work out the tax treatment of each purchase, like a wifi router used partly for business or writing off the MacBook.</p>
+  <figure>
+    <a href="/updates/img/2026-10-02-expenses.jpg"><img src="/updates/img/2026-10-02-expenses.jpg" alt="Expenses log with this week's business expenses and tax notes"></a>
+  </figure>
+
+  <h3><span class="n">3</span>Agent Usage</h3>
+  <p>AI agents will be our main cost as an app studio, so we built a dashboard that tracks what each one costs per run and per week, against a monthly budget. October so far: <strong>$10.71 of a $30 budget</strong>, measured at API prices. Our Claude subscription covers it.</p>
+  <figure>
+    <a href="/updates/img/2026-10-02-agent-usage.jpg"><img src="/updates/img/2026-10-02-agent-usage.jpg" alt="Agent usage dashboard: $10.71 of $30 budget this month, cost per week by agent, and runs that need a look"></a>
+  </figure>
+
+  <h2>Next week</h2>
+  <ul>
+    <li><strong>Announce GoodApp Labs.</strong> Some marketing on LinkedIn, and maybe YouTube if I feel inspired.</li>
+    <li><strong>Wrap up our first app.</strong> It helps kids put their dreams into (digital) jars, and it's super cute. The main goal of this first project is learning every step of the workflow end to end.</li>
+  </ul>
+
+  <p class="signoff"><strong>Bottom line:</strong> A truly fun week. The LLC's foundations are in place, and our first agents are built and running on a schedule.<br><br>David</p>
+
+  <footer>© 2026 GoodApp Labs LLC · Internal, please don't share</footer>
+</div>
+</body>
+</html>
