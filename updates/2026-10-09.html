@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Week 3 Update · GoodApp Labs</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Figtree:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f1; --ink: #191714; --muted: #5f5850; --faint: #847c72; --rule: #ece5d8; --accent: #d98a17; --card: #fff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--ink); }
+  a:hover { color: var(--accent); }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 32px 20px 72px; }
+  header { display: flex; align-items: center; gap: 11px; margin-bottom: 56px; }
+  header .dot { display: block; margin-top: -1px; }
+  header a { font-size: 16px; font-weight: 500; letter-spacing: -0.015em; text-decoration: none; }
+  .meta { font-size: 14px; color: var(--faint); letter-spacing: 0.02em; text-transform: uppercase; margin: 0 0 12px; }
+  h1 { font-family: 'Figtree', Helvetica, sans-serif; font-size: clamp(36px, 7vw, 52px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 24px; }
+  h2 { font-family: 'Figtree', Helvetica, sans-serif; font-size: 22px; font-weight: 600; letter-spacing: -0.015em; margin: 48px 0 12px; }
+  h3 { font-family: 'Figtree', Helvetica, sans-serif; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin: 28px 0 8px; }
+  p, ul { margin: 0 0 16px; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  .tldr { background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 10px; padding: 18px 22px; color: var(--muted); }
+  .tldr strong { color: var(--ink); }
+  .status { display: flex; gap: 12px; align-items: flex-start; background: #fbf0dc; border-radius: 10px; padding: 14px 18px; font-size: 16px; color: #6b4a12; }
+  .status b { flex: none; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; background: #fff; border-radius: 999px; padding: 2px 10px; margin-top: 2px; }
+  figure { margin: 16px 0 24px; }
+  .embed { display: block; width: 100%; border: 0; border-radius: 12px; background: #000; }
+  .embed.wide { aspect-ratio: 16 / 9; }
+  .embed.tall { aspect-ratio: 9 / 16; max-width: 300px; border-radius: 22px; }
+  figcaption { font-size: 14px; color: var(--faint); margin-top: 8px; }
+  .camp { display: block; width: 100%; max-width: 320px; height: auto; margin: 8px 0 16px; }
+  .bye { color: var(--muted); }
+  .signoff { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); color: var(--muted); }
+  footer { margin-top: 56px; font-size: 14px; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img class="dot" src="/apple.svg" alt="" width="15" height="15"><a href="/">GoodApp Labs</a></header>
+
+  <p class="meta">Update #3 · October 9, 2026</p>
+  <h1>Week three: building apps and announcing GAppL.</h1>
+
+  <p class="tldr"><strong>TL;DR:</strong> This week wasn't as smooth as the first two. Life got in the way, and Apple's paperwork is holding up our first launch. Still, we improved our first app, Dream Jar, and publicly announced GoodApp Labs.</p>
+
+  <h2>Waiting on Apple</h2>
+  <p>We paused building agents this week to push toward our first app launch, and hit a blocker. Our Apple developer account has to move from a personal account to a business one, which affects a lot, including payments. Apple hasn't been very responsive, so for now we're waiting.</p>
+
+  <h2>Our first app: Dream Jar</h2>
+  <p>I started Dream Jar during my parental leave, just for my family, but over time it started to feel shippable.</p>
+  <p>It's an app that lets parents record their kids' dreams and put them into jars on shelves. It's super cute, because kids get to see their dreams come to life. And it's really helpful for parents to go back and ask, “What did Yulan want to do again? Oh right, I should make that happen!”</p>
+  <figure>
+    <iframe class="embed tall" src="https://www.youtube-nocookie.com/embed/8IN9nkZVOcA?rel=0" title="Dream Jar demo" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>
+    <figcaption>Dream Jar demo (1.5 min)</figcaption>
+  </figure>
+
+  <h3>This week</h3>
+  <ul>
+    <li><strong>Better speech recognition.</strong> We swapped Apple's built-in speech recognition for Deepgram. Apple's struggled with kids' voices, especially in loud places.</li>
+    <li><strong>A tip jar.</strong> A new screen lets people chip in, which funds the work and keeps the app free for everyone.</li>
+  </ul>
+
+  <h3>Next</h3>
+  <p class="status"><b>Blocked</b><span>Once Apple finishes moving us to a business account, we'll start the App Store prep: payments, privacy, and testing with friends.</span></p>
+
+  <h2>We announced GoodApp Labs</h2>
+  <p>I announced the LLC on LinkedIn (the post is on <a href="https://www.linkedin.com/in/davidtma/" target="_blank" rel="noopener">my profile</a>) and published my very first YouTube video. I don't know yet whether YouTube will become a regular thing, but the video somehow got 140 views on a brand-new channel. Cool, I guess?</p>
+  <figure>
+    <iframe class="embed wide" src="https://www.youtube-nocookie.com/embed/6xej_FKh9Qc?rel=0" title="I left my CEO job because of AI" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>
+    <figcaption>Our first YouTube video: I left my CEO job because of AI</figcaption>
+  </figure>
+
+  <h2>What I'm learning</h2>
+  <ul>
+    <li><strong>Finishing can feel like a slog.</strong> After the rush of building something new, wrapping up Dream Jar has been less inspiring. I'm learning to be okay with things losing their spark.</li>
+    <li><strong>Building in public is scarier than I thought.</strong> Finishing means the exposure is real, and that's scary. Scaries slow you down. I'm learning that courage is a daily practice, and I realized you can make things less scary with automation and breaking down exposure into small steps.</li>
+  </ul>
+
+  <p class="signoff">We're going camping this weekend, so I'm signing off early today!</p>
+  <svg class="camp" viewBox="0 0 320 150" role="img" aria-label="A tent next to a pine tree under the moon and stars">
+    <circle cx="262" cy="34" r="14" fill="#f6c453"/>
+    <circle cx="268" cy="29" r="12" fill="var(--bg)"/>
+    <g fill="#e39a1c"><circle cx="58" cy="24" r="2"/><circle cx="118" cy="44" r="1.6"/><circle cx="200" cy="18" r="1.8"/><circle cx="300" cy="66" r="1.5"/><circle cx="24" cy="70" r="1.4"/></g>
+    <rect x="0" y="128" width="320" height="22" rx="11" fill="#e9e1cf"/>
+    <rect x="82" y="104" width="8" height="26" rx="2" fill="#8a5a2b"/>
+    <path d="M86 22 L120 72 H104 L128 106 H44 L68 72 H52 Z" fill="#3f7d5a"/>
+    <path d="M150 128 L196 58 L242 128 Z" fill="#e39a1c"/>
+    <path d="M196 58 L196 128 L242 128 Z" fill="#c97f12"/>
+    <path d="M196 84 L182 128 H210 Z" fill="#5a3a12"/>
+    <path d="M196 58 L192 50" stroke="#8a5a2b" stroke-width="3" stroke-linecap="round"/>
+    <g transform="translate(266 116)"><path d="M-10 12 L10 4 M-10 4 L10 12" stroke="#8a5a2b" stroke-width="4" stroke-linecap="round"/><path d="M0 -12 C7 -4 6 4 0 6 C-6 4 -7 -4 0 -12 Z" fill="#f2b632"/><path d="M0 -4 C3 0 3 3 0 4 C-3 3 -3 0 0 -4 Z" fill="#fff0c2"/></g>
+  </svg>
+  <p class="bye">David</p>
+
+  <footer>© 2026 GoodApp Labs LLC · Internal, please don't share</footer>
+</div>
+</body>
+</html>
