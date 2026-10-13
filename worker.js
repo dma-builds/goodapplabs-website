@@ -15,8 +15,10 @@ const SHARE_OPEN_URL = "https://ywrzipaephysgeeyigid.supabase.co/functions/v1/sh
 const NOT_A_PERSON = /bot|crawl|spider|preview|facebookexternalhit|whatsapp|telegram|slack|discord|skype|embedly|pinterest|google|bing|curl|wget|python|headless/i;
 
 async function sharedDream(request, env, ctx, shareId) {
-  const page = await env.ASSETS.fetch(new Request(new URL("/dream-jar/shared", request.url), request));
-  const res = new Response(page.body, page);
+  // Always fetch the page as a GET: a HEAD passed through to the assets comes back 404.
+  const page = await env.ASSETS.fetch(new URL("/dream-jar/shared", request.url));
+  const body = request.method === "HEAD" ? null : page.body;
+  const res = new Response(body, page);
   res.headers.set("X-Robots-Tag", "noindex, nofollow");
   res.headers.set("Cache-Control", "private, no-store");
 
