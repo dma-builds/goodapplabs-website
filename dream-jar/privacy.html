@@ -29,7 +29,7 @@
   <main style="position:relative;z-index:1;flex:1;max-width:1240px;width:100%;box-sizing:border-box;margin:0 auto;padding:48px 44px 88px">
     <p style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#847c72;margin:0 0 16px">Dream Jar</p>
     <h1 style="font-family:'Figtree',Helvetica,sans-serif;font-size:56px;font-weight:500;line-height:1.02;letter-spacing:-0.04em;margin:0">Privacy Policy</h1>
-    <p style="font-size:14px;color:#847c72;margin:14px 0 0">Last updated 6 October 2026</p>
+    <p style="font-size:14px;color:#847c72;margin:14px 0 0">Last updated 13 October 2026</p>
 
     <div style="display:grid;gap:36px;max-width:70ch;margin-top:44px;font-size:17px;line-height:1.7;color:#413a33">
       <p style="margin:0">Dream Jar is an app for parents to use alongside their children. A child says a dream out loud, the app turns it into words and paints a picture of that dream, and it is kept in a jar on a shelf. This page explains exactly what that involves: what we collect, where it goes, how long it stays, and how to delete it. This policy covers Dream Jar only; the GoodApp Labs website has its <a href="/privacy">own policy</a>. Dream Jar is offered in the United States.</p>
@@ -39,7 +39,7 @@
         <ul style="margin:0;padding:0 0 0 20px;display:grid;gap:12px;font-size:16px;line-height:1.65;color:#4b443c">
           <li><strong style="font-weight:500;color:#191714">Your child's photo is never stored on GoodApp Labs' servers.</strong> It stays on your device. It is sent once per illustration to our image provider to draw your child, and is not kept by them for training.</li>
           <li><strong style="font-weight:500;color:#191714">Voice recordings are not stored beyond transcription.</strong> They are used only to transcribe what your child said — never to identify anyone, never to train models.</li>
-          <li><strong style="font-weight:500;color:#191714">We store as little as possible.</strong> Without an account, the dreams, the name and the photo all stay on your device; we hold only a randomly generated identifier and a count of illustrations made. With an account, your dream jars are stored so you can reach them from any device.</li>
+          <li><strong style="font-weight:500;color:#191714">We store as little as possible.</strong> Without an account, the dreams, the name and the photo all stay on your device; we hold only a randomly generated identifier, a count of illustrations made, and a record of how the app is used (which steps you reached, never what was said or drawn). With an account, your dream jars are stored so you can reach them from any device.</li>
           <li><strong style="font-weight:500;color:#191714">This app is for parents and guardians to use alongside their children.</strong> The parent or guardian is the primary user and operates the app.</li>
         </ul>
       </div>
@@ -78,6 +78,16 @@
         </div>
 
         <div style="display:grid;gap:10px">
+          <h3 style="font-size:19px;font-weight:500;margin:0;letter-spacing:-0.015em">How the app is used</h3>
+          <p style="margin:0">To see whether the app works well and where it goes wrong, the app records what happens as you use it: when it was opened, which steps you reached (for example, recording a dream, the picture arriving, saving the jar, sharing it), how long each step took, and whether something failed and why. These records are linked to your account, or to the random identifier if you don't have one. They never contain the words of a dream, your child's name, the photo, the picture or any recording. We use them only to improve Dream Jar. We don't use them for advertising, don't share them with anyone else, and don't combine them with information from other companies.</p>
+        </div>
+
+        <div style="display:grid;gap:10px">
+          <h3 style="font-size:19px;font-weight:500;margin:0;letter-spacing:-0.015em">Sharing a dream</h3>
+          <p style="margin:0">When you share a dream, the picture is sent with a short link to the Dream Jar page (for example goodapplabs.ai/d/…). The link holds only a random code. When someone opens it, we count that the link was opened, so we can see how many people a shared dream reaches. We don't record who opened it, their IP address or anything about their device. To avoid counting the same person twice, their browser keeps a small cookie for that link and nothing else. The app also notes whether the share went through and to which app (such as Messages), as Apple reports it, but never who it was sent to.</p>
+        </div>
+
+        <div style="display:grid;gap:10px">
           <h3 style="font-size:19px;font-weight:500;margin:0;letter-spacing:-0.015em">What we don't collect</h3>
           <p style="margin:0">No surnames, no addresses, no birthdates. No advertising identifiers, no location data. We do not sell or share personal information with anyone for advertising, and we do not build profiles of children.</p>
         </div>
@@ -91,7 +101,7 @@
             <span style="padding:14px 18px">Provider</span><span style="padding:14px 18px">What it receives</span><span style="padding:14px 18px">Why</span>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1.4fr 1.2fr;font-size:15px;line-height:1.55;color:#4b443c">
-            <span style="padding:15px 18px;border-bottom:1px solid #f2ece1;color:#191714">Supabase</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">Account details, and your jars if you have an account</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">Accounts, database, image storage</span>
+            <span style="padding:15px 18px;border-bottom:1px solid #f2ece1;color:#191714">Supabase</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">Account details, your jars if you have an account, and the records of how the app is used</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">Accounts, database, image storage</span>
             <span style="padding:15px 18px;border-bottom:1px solid #f2ece1;color:#191714">Twilio</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">Your phone number</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">Sending the verification code</span>
             <span style="padding:15px 18px;border-bottom:1px solid #f2ece1;color:#191714">Deepgram</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">The voice recording</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">Speech into text (opted out of model training)</span>
             <span style="padding:15px 18px;border-bottom:1px solid #f2ece1;color:#191714">Google (Gemini)</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">The wish text, and the photo if you added one</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">Painting the illustration (not used to train Google's models)</span>
@@ -107,6 +117,8 @@
           <span style="padding:15px 18px;border-bottom:1px solid #f2ece1;color:#191714">Your child's photo</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">On your device until you change or remove it; never stored by us</span>
           <span style="padding:15px 18px;border-bottom:1px solid #f2ece1;color:#191714">Jars (wish + illustration)</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">On your device until you delete them or remove the app. If you have an account, they are also kept on our servers until you delete them, and in any case no longer than 36 months after you last open the app</span>
           <span style="padding:15px 18px;border-bottom:1px solid #f2ece1;color:#191714">Account details</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">Until you delete your account, should you create one. Accounts inactive for 36 months may be deleted</span>
+          <span style="padding:15px 18px;border-bottom:1px solid #f2ece1;color:#191714">Records of how the app is used</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">Deleted with your account, and in any case no longer than 36 months</span>
+          <span style="padding:15px 18px;border-bottom:1px solid #f2ece1;color:#191714">Counts of shared-link opens</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">No longer than 36 months</span>
           <span style="padding:15px 18px;border-bottom:1px solid #f2ece1;color:#191714">Diagnostic logs</span><span style="padding:15px 18px;border-bottom:1px solid #f2ece1">30 days</span>
           <span style="padding:15px 18px;color:#191714">Backups</span><span style="padding:15px 18px">Deleted content is purged from backups within 90 days</span>
         </div>

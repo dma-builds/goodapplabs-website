@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>A dream from a Dream Jar</title>
+<meta name="description" content="A child said a dream out loud, and Dream Jar painted it.">
+<meta property="og:title" content="A dream from a Dream Jar">
+<meta property="og:description" content="A child said a dream out loud, and Dream Jar painted it.">
+<meta property="og:site_name" content="Dream Jar by GoodApp Labs">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<!-- Served at goodapplabs.ai/d/<share_id> by worker.js, which counts the open. -->
+<style>
+  body { margin: 0; background: #faf7f1; color: #191714; font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #e1523d; text-underline-offset: 3px; }
+  a:hover { color: #191714; }
+  @keyframes drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-4%,-3%,0) scale(1.12); } }
+  .glow { position: fixed; inset: -10%; pointer-events: none; z-index: 0; animation: drift 22s ease-in-out infinite alternate;
+    background: radial-gradient(110% 85% at 88% 108%, rgba(87,64,140,0.30), rgba(87,64,140,0) 62%), radial-gradient(85% 65% at 6% 102%, rgba(225,82,61,0.20), rgba(225,82,61,0) 66%); }
+  header { position: relative; z-index: 1; padding: 28px 24px; max-width: 760px; margin: 0 auto; display: flex; align-items: center; gap: 11px; }
+  header i { width: 11px; height: 11px; border-radius: 50%; background: #e1523d; display: block; }
+  header a { font-size: 16px; font-weight: 500; letter-spacing: -0.015em; color: #191714; text-decoration: none; }
+  main { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 40px 24px 88px; }
+  .eyebrow { font-family: ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #847c72; margin: 0 0 16px; }
+  h1 { font-family: 'Figtree', Helvetica, sans-serif; font-size: clamp(38px, 9vw, 56px); font-weight: 500; line-height: 1.04; letter-spacing: -0.04em; margin: 0; }
+  p { font-size: 18px; line-height: 1.65; color: #413a33; max-width: 52ch; }
+  .cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; padding: 15px 24px; border-radius: 999px;
+    background: #191714; color: #faf7f1; text-decoration: none; font-size: 16px; font-weight: 500; }
+  .cta:hover { color: #faf7f1; background: #413a33; }
+  .soon { margin-top: 18px; display: inline-block; padding: 12px 18px; border: 1px solid #ece5d8; border-radius: 999px; background: rgba(255,255,255,0.6); color: #4b443c; font-size: 15px; }
+  .fine { margin-top: 48px; font-size: 14px; color: #847c72; }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<header><i></i><a href="/">GoodApp Labs</a></header>
+<main>
+  <p class="eyebrow">Dream Jar</p>
+  <h1>Someone sent you a dream.</h1>
+  <p>A child said it out loud, and Dream Jar painted it. Each dream is sealed in a jar on a little shelf, so a family can look back on everything their kid hoped for.</p>
+  <p>Made for parents to use with their children, at bedtime or any time a dream comes up.</p>
+  <div id="get"><span class="soon">Coming soon to the App Store</span></div>
+  <p class="fine"><a href="/dream-jar/privacy">Privacy</a> · Opening this link counted one visit to it. Nothing about you was recorded.</p>
+</main>
+<script>
+  // Turn this on once Dream Jar is live on the App Store. PROVIDER_TOKEN is the `pt` value from
+  // App Store Connect → App Analytics → Campaigns → "Generate a campaign link"; with it, App Store
+  // Connect reports installs that came from shared dreams under the campaign "share".
+  const APP_STORE_LIVE = false;
+  const APP_ID = '6796370971';
+  const PROVIDER_TOKEN = '';
+  if (APP_STORE_LIVE) {
+    const url = new URL(`https://apps.apple.com/app/apple-store/id${APP_ID}`);
+    if (PROVIDER_TOKEN) {
+      url.searchParams.set('pt', PROVIDER_TOKEN);
+      url.searchParams.set('ct', 'share');
+    }
+    url.searchParams.set('mt', '8');
+    const a = document.createElement('a');
+    a.className = 'cta';
+    a.href = url.toString();
+    a.textContent = 'Get Dream Jar on the App Store';
+    document.getElementById('get').replaceChildren(a);
+  }
+</script>
+</body>
+</html>
