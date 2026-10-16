@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Week 4 Update · GoodApp Labs</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Figtree:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f1; --ink: #191714; --muted: #5f5850; --faint: #847c72; --rule: #ece5d8; --accent: #d98a17; --card: #fff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--ink); }
+  a:hover { color: var(--accent); }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 32px 20px 72px; }
+  header { display: flex; align-items: center; gap: 11px; margin-bottom: 56px; }
+  header .dot { display: block; margin-top: -1px; }
+  header a { font-size: 16px; font-weight: 500; letter-spacing: -0.015em; text-decoration: none; }
+  .meta { font-size: 14px; color: var(--faint); letter-spacing: 0.02em; text-transform: uppercase; margin: 0 0 12px; }
+  h1 { font-family: 'Figtree', Helvetica, sans-serif; font-size: clamp(36px, 7vw, 52px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 24px; }
+  h2 { font-family: 'Figtree', Helvetica, sans-serif; font-size: 22px; font-weight: 600; letter-spacing: -0.015em; margin: 48px 0 12px; }
+  h3 { font-family: 'Figtree', Helvetica, sans-serif; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin: 28px 0 8px; }
+  p, ul { margin: 0 0 16px; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  .tldr { background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 10px; padding: 18px 22px; color: var(--muted); }
+  .tldr strong { color: var(--ink); }
+  .status { display: flex; gap: 12px; align-items: flex-start; background: #e6f2e8; border-radius: 10px; padding: 14px 18px; font-size: 16px; color: #24543a; margin: 0 0 16px; }
+  .status b { flex: none; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; background: #fff; border-radius: 999px; padding: 2px 10px; margin-top: 2px; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0 16px; }
+  .stat { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; }
+  .stat .k { font-size: 13px; color: var(--faint); letter-spacing: 0.04em; text-transform: uppercase; }
+  .stat b { display: block; font-family: 'Figtree', Helvetica, sans-serif; font-size: 30px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; margin-top: 2px; }
+  .stat span { display: block; font-size: 15px; line-height: 1.45; color: var(--muted); margin-top: 6px; }
+  figure { margin: 16px 0 24px; }
+  figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 10px; }
+  figcaption { font-size: 14px; color: var(--faint); margin-top: 8px; }
+  .signoff { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); color: var(--muted); }
+  footer { margin-top: 56px; font-size: 14px; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img class="dot" src="/apple.svg" alt="" width="15" height="15"><a href="/">GoodApp Labs</a></header>
+
+  <p class="meta">Update #4 · October 16, 2026</p>
+  <h1>Week four: execution week.</h1>
+
+  <p class="tldr"><strong>TL;DR:</strong> A busy week. We fixed our idea Inventor, built a new research agent that maps user journeys, and set success metrics for Dream Jar. Apple approved our business account, so Dream Jar goes out to friends and family for testing next week.</p>
+
+  <h2>On the LLC</h2>
+  <h3>Fixing the Inventor</h3>
+  <p>For the last two weeks, the quality of our Inventor's ideas had dropped. I had tweaked it to screen out ideas that might be too crowded or too easy for AI to automate away, and that screen made its ideas worse. I learned that it doesn't need to get the exact product right. It's most helpful at spotting big opportunities: where people feel the most pain and frustration. So we walked back those self-filtering instructions.</p>
+
+  <h3>Delight, not just solving problems</h3>
+  <p>Another thing I realized: the consumer market is already crowded with apps that solve pain points (obvious, I know). It reinforced my belief that creating delight matters as much as solving problems. Our engineering brains easily latch onto solving problems, but solving problems can feel scarce, creating joy and delight feels abundant.</p>
+
+  <h3>A new research agent: journey maps</h3>
+  <p>We built a research agent that takes a product idea and maps out the user's journey, step by step. This is a critical step before design, because it shows the shape of the problem we're aiming to solve. We've started mapping job seekers looking for referrals and people learning to cook, and the maps are actually quite good.</p>
+  <figure>
+    <a href="/updates/img/2026-10-16-journey-overview.jpg"><img src="/updates/img/2026-10-16-journey-overview.jpg" alt="Warm Intro journey map overview: the job, audience, scope, summary, most painful stages, and open questions"></a>
+    <figcaption>The Warm Intro map: who it's for, where the journey starts and ends, and the most painful stages.</figcaption>
+  </figure>
+  <figure>
+    <a href="/updates/img/2026-10-16-journey-stages.jpg"><img src="/updates/img/2026-10-16-journey-stages.jpg" alt="Journey map stages with a pain score for each step, backed by evidence or intuition"></a>
+    <figcaption>Each step gets a pain score, marked as backed by evidence or just intuition.</figcaption>
+  </figure>
+
+  <h2>Dream Jar</h2>
+  <h3>How we'll measure success</h3>
+  <p>The main goal of our first build is learning, and I don't expect it to be a massive success. Still, it's important to be disciplined and declare upfront what a good product looks like. Beyond the app working well, that means:</p>
+  <div class="stats">
+    <div class="stat"><span class="k">Habit</span><b>&gt;25%</b><span>of parents use it on 3+ different days to paint and brew their kids' dreams.</span></div>
+    <div class="stat"><span class="k">Virality</span><b>k ≥ 1</b><span>Each family brings in at least one more on its own (shares × install rate).</span></div>
+  </div>
+  <p>We expect habit to start out decent and k to start well below 1. Early feedback will tell us whether to focus on making the app more shareable.</p>
+
+  <h3>Getting ready to ship</h3>
+  <p class="status"><b>Unblocked</b><span>Apple approved our move to a business account (woo!), so we can now build in payments.</span></p>
+  <ul>
+    <li><strong>Better in real life.</strong> Speech recognition works better in noisy places, and there's a new error screen for spotty internet.</li>
+    <li><strong>A gentler tip jar.</strong> It only appears once a family has built a habit with their jars, and at most once a day.</li>
+    <li><strong>Privacy policy finalized.</strong> <a href="/dream-jar/privacy">Read it here.</a></li>
+  </ul>
+
+  <h3>Next week</h3>
+  <ul>
+    <li>My own end-to-end testing.</li>
+    <li>The App Store listing and basic marketing: name, description, screenshots and a support page.</li>
+    <li>Friends and family testing begins!</li>
+  </ul>
+
+  <p class="signoff">David</p>
+
+  <footer>© 2026 GoodApp Labs LLC · Internal, please don't share</footer>
+</div>
+</body>
+</html>
