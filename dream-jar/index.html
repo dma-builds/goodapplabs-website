@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dream in a Jar</title>
+<meta name="description" content="A child says a dream out loud, and Dream in a Jar paints it and keeps it in a jar on a shelf.">
+<meta property="og:title" content="Dream in a Jar">
+<meta property="og:description" content="A child says a dream out loud, and Dream in a Jar paints it and keeps it in a jar on a shelf.">
+<meta property="og:site_name" content="Dream in a Jar by GoodApp Labs">
+<link rel="icon" href="/dream-jar/icon.png">
+<link rel="apple-touch-icon" href="/dream-jar/icon.png">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #faf7f1; }
+  a { color: #e1523d; text-underline-offset: 3px; }
+  a:hover { color: #191714; }
+  @keyframes drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-4%,-3%,0) scale(1.12); } }
+  @media (max-width: 640px) {
+    header, main, footer > div { padding-left: 20px !important; padding-right: 20px !important; }
+    h1 { font-size: 48px !important; }
+  }
+</style>
+</helmet>
+<div style="background:#faf7f1;color:#191714;font-family:'Instrument Sans','Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden">
+  <div style="position:fixed;inset:-10%;pointer-events:none;z-index:0;background:radial-gradient(110% 85% at 88% 108%, rgba(20,124,196,0.34), rgba(20,124,196,0) 62%), radial-gradient(85% 65% at 6% 102%, rgba(34,158,178,0.28), rgba(34,158,178,0) 66%);animation:drift 22s ease-in-out infinite alternate"></div>
+
+  <header style="position:relative;z-index:1;padding:32px 44px;max-width:1240px;width:100%;box-sizing:border-box;margin:0 auto;display:flex;align-items:center;gap:11px">
+    <span style="width:11px;height:11px;border-radius:50%;background:#e1523d;display:block"></span>
+    <a href="/" style="font-size:16px;font-weight:500;letter-spacing:-0.015em;color:#191714;text-decoration:none">GoodApp Labs</a>
+  </header>
+
+  <main style="position:relative;z-index:1;flex:1;max-width:1240px;width:100%;box-sizing:border-box;margin:0 auto;padding:64px 44px 104px">
+    <img src="/dream-jar/icon.png" alt="Dream in a Jar app icon" width="120" height="120" style="display:block;border-radius:27px;box-shadow:0 10px 30px rgba(52,30,120,0.24);margin:0 0 32px">
+    <h1 style="font-family:'Figtree',Helvetica,sans-serif;font-size:64px;font-weight:500;line-height:1.02;letter-spacing:-0.04em;margin:0">Dream in a Jar</h1>
+    <p style="font-family:'Figtree',Helvetica,sans-serif;font-size:24px;line-height:1.35;letter-spacing:-0.02em;color:#413a33;margin:18px 0 0;max-width:30ch">Every dream your child says out loud, painted and kept.</p>
+
+    <div style="display:grid;gap:20px;max-width:60ch;margin-top:40px;font-size:17px;line-height:1.7;color:#413a33">
+      <p style="margin:0">Your child says a dream out loud. Dream in a Jar turns it into words, paints a picture of it, and seals it in a jar on a little shelf, so your family can look back on everything they once hoped for.</p>
+      <p style="margin:0">Made for parents to use alongside their children, at bedtime or any time a dream comes up.</p>
+      <p style="margin:8px 0 0;font-size:15px;color:#847c72">Coming soon to iPhone.</p>
+    </div>
+  </main>
+
+  <footer style="position:relative;z-index:1;border-top:1px solid #ece5d8">
+    <div style="max-width:1240px;margin:0 auto;padding:24px 44px 40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:baseline;font-size:15px;color:#847c72">
+      <a href="mailto:support@goodapplabs.com">support@goodapplabs.com</a>
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:baseline">
+        <a href="/dream-jar/support" style="color:#847c72;text-decoration:none">Support</a>
+        <a href="/dream-jar/privacy" style="color:#847c72;text-decoration:none">Privacy</a>
+        <a href="/" style="color:#847c72;text-decoration:none">Home</a>
+        <span>© 2026 GoodApp Labs LLC</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+</body>
+</html>
