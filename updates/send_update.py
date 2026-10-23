@@ -82,14 +82,32 @@ Unsubscribe: {unsub}
 GoodApp Labs LLC, {address}
 """)
     t, u, a = escape(title), escape(url), escape(address)
-    msg.add_alternative(f"""<div style="font-family:Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#191714;max-width:520px">
-<p>Hi! There's a new GoodApp Labs update up:</p>
-<p style="font-size:19px;font-weight:600;margin:20px 0"><a href="{u}" style="color:#191714">{t}</a></p>
-<p><a href="{u}" style="color:#c2740f;font-weight:600;text-decoration:none">Read it &rarr;</a></p>
-<p>David</p>
-<p style="margin-top:32px;padding-top:16px;border-top:1px solid #ece5d8;font-size:13px;color:#847c72">You're getting this because you signed up at goodapplabs.ai/updates.
-<a href="{escape(unsub)}" style="color:#847c72">Unsubscribe</a><br>GoodApp Labs LLC, {a}</p>
-</div>""", subtype="html")
+    # Tables and inline styles because that's what email clients render reliably. Gmail
+    # doesn't show SVG, so the logo is the site's PNG touch icon.
+    font = "-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif"
+    msg.add_alternative(f"""<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<meta name="color-scheme" content="light"></head>
+<body style="margin:0;padding:0;background:#faf7f1">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#faf7f1"><tr><td align="center" style="padding:32px 16px">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;font-family:{font};color:#191714">
+    <tr><td style="padding:0 4px 20px">
+      <a href="{SITE}" style="text-decoration:none;color:#191714"><img src="{SITE}/apple-touch-icon.png" width="36" height="36" alt="" style="vertical-align:middle;border:0;border-radius:4px"><span style="vertical-align:middle;margin-left:10px;font-size:16px;font-weight:600;letter-spacing:-0.01em">GoodApp Labs</span></a>
+    </td></tr>
+    <tr><td style="background:#ffffff;border:1px solid #ece5d8;border-top:4px solid #e39a1c;border-radius:12px;padding:28px 28px 30px">
+      <p style="margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#c2740f">New update</p>
+      <p style="margin:0 0 24px;font-size:24px;line-height:1.25;font-weight:700;letter-spacing:-0.02em"><a href="{u}" style="color:#191714;text-decoration:none">{t}</a></p>
+      <table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="background:#191714;border-radius:8px">
+        <a href="{u}" style="display:inline-block;padding:12px 20px;font-size:16px;font-weight:600;color:#ffffff;text-decoration:none">Read the update &rarr;</a>
+      </td></tr></table>
+      <p style="margin:26px 0 0;font-size:16px;line-height:1.6;color:#5f5850">Thanks for following along,<br>David</p>
+    </td></tr>
+    <tr><td style="padding:20px 4px 0;font-size:12px;line-height:1.6;color:#847c72">
+      You're getting this because you signed up at <a href="{SITE}/updates" style="color:#847c72">goodapplabs.ai/updates</a>.
+      <a href="{escape(unsub)}" style="color:#847c72">Unsubscribe</a><br>GoodApp Labs LLC, {a}
+    </td></tr>
+  </table>
+</td></tr></table>
+</body></html>""", subtype="html")
     return msg
 
 
