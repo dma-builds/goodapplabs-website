@@ -5,8 +5,17 @@
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
-    // Only the /updates index (basic auth) and shared Dream Jar links /d/* (open counting) go
-    // through worker.js; posts and everything else are served directly.
-    "run_worker_first": ["/updates", "/updates/", "/updates/index.html", "/d/*"]
-  }
+    // Only shared Dream Jar links /d/* (open counting) and the subscription API /api/* go
+    // through worker.js; everything else is served directly.
+    "run_worker_first": ["/d/*", "/api/*"]
+  },
+  // Subscribers to /updates. Schema in migrations/.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "goodapplabs-site",
+      "database_id": "186dc68a-1126-4eeb-aa18-47cdd3dd982b",
+      "migrations_dir": "migrations"
+    }
+  ]
 }

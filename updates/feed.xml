@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>GoodApp Labs updates</title>
+    <link>https://goodapplabs.ai/updates</link>
+    <description>Weekly notes on what we built, what we learned, and where we're headed.</description>
+    <language>en</language>
+    <item>
+      <title>#5 · Month one: time flies when you're having fun!</title>
+      <link>https://goodapplabs.ai/updates/2026-10-23</link>
+      <guid isPermaLink="true">https://goodapplabs.ai/updates/2026-10-23</guid>
+      <pubDate>Fri, 23 Oct 2026 17:00:00 +0000</pubDate>
+      <description>A new GoodApp Labs update is up: #5 · Month one: time flies when you're having fun!</description>
+    </item>
+    <item>
+      <title>#4 · Week four: execution week.</title>
+      <link>https://goodapplabs.ai/updates/2026-10-16</link>
+      <guid isPermaLink="true">https://goodapplabs.ai/updates/2026-10-16</guid>
+      <pubDate>Fri, 16 Oct 2026 17:00:00 +0000</pubDate>
+      <description>A new GoodApp Labs update is up: #4 · Week four: execution week.</description>
+    </item>
+    <item>
+      <title>#3 · Week three: building apps and announcing GAppL.</title>
+      <link>https://goodapplabs.ai/updates/2026-10-09</link>
+      <guid isPermaLink="true">https://goodapplabs.ai/updates/2026-10-09</guid>
+      <pubDate>Fri, 09 Oct 2026 17:00:00 +0000</pubDate>
+      <description>A new GoodApp Labs update is up: #3 · Week three: building apps and announcing GAppL.</description>
+    </item>
+    <item>
+      <title>#2 · Week two: building HQ.</title>
+      <link>https://goodapplabs.ai/updates/2026-10-02</link>
+      <guid isPermaLink="true">https://goodapplabs.ai/updates/2026-10-02</guid>
+      <pubDate>Fri, 02 Oct 2026 17:00:00 +0000</pubDate>
+      <description>A new GoodApp Labs update is up: #2 · Week two: building HQ.</description>
+    </item>
+    <item>
+      <title>#1 · Week one: we're off.</title>
+      <link>https://goodapplabs.ai/updates/2026-09-25</link>
+      <guid isPermaLink="true">https://goodapplabs.ai/updates/2026-09-25</guid>
+      <pubDate>Fri, 25 Sep 2026 17:00:00 +0000</pubDate>
+      <description>A new GoodApp Labs update is up: #1 · Week one: we're off.</description>
+    </item>
+  </channel>
+</rss>

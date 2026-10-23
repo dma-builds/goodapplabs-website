@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
 <title>Updates · GoodApp Labs</title>
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="GoodApp Labs updates" href="/updates/feed.xml">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Figtree:wght@500;600&display=swap" rel="stylesheet">
 <style>
@@ -15,6 +16,7 @@
   .wrap { max-width: 680px; margin: 0 auto; padding: 32px 20px 72px; }
   header { display: flex; align-items: center; gap: 11px; margin-bottom: 56px; }
   header .dot { display: block; margin-top: -1px; }
+  header .logo { display: block; margin-right: 3px; image-rendering: pixelated; }
   header a { font-size: 16px; font-weight: 500; letter-spacing: -0.015em; text-decoration: none; }
   h1 { font-family: 'Figtree', Helvetica, sans-serif; font-size: clamp(36px, 7vw, 52px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 12px; }
   .lede { color: var(--muted); margin: 0 0 40px; }
@@ -24,42 +26,108 @@
   .date { flex: none; width: 96px; font-size: 14px; color: var(--faint); font-variant-numeric: tabular-nums; }
   .title { display: block; font-family: 'Figtree', Helvetica, sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -0.015em; transition: color 0.2s ease; }
   .summary { display: block; font-size: 15px; color: var(--muted); margin-top: 2px; }
+  .subscribe { margin: 0 0 48px; padding: 20px 22px; background: var(--card); border: 1px solid var(--rule); border-radius: 12px; scroll-margin-top: 24px; }
+  .subscribe p { margin: 0 0 12px; font-size: 16px; color: var(--muted); }
+  .subscribe p strong { color: var(--ink); }
+  .subscribe form { display: flex; gap: 8px; flex-wrap: wrap; }
+  .subscribe input { flex: 1 1 220px; min-width: 0; font: inherit; font-size: 16px; padding: 10px 14px; border: 1px solid #ddd3c2; border-radius: 8px; background: var(--bg); color: var(--ink); }
+  .subscribe input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+  .subscribe button { font: inherit; font-size: 16px; font-weight: 600; padding: 10px 18px; border: 0; border-radius: 8px; background: var(--ink); color: #fff; cursor: pointer; transition: background 0.2s ease; }
+  .subscribe button:hover { background: #c2740f; }
+  .subscribe .done { display: none; margin: 0; color: var(--ink); }
+  .subscribe.sent form { display: none; }
+  .subscribe.sent .done { display: block; }
+  .subscribe .error { display: none; margin: 10px 0 0; color: #a3532a; font-size: 15px; }
+  .subscribe.failed .error { display: block; }
+  .subscribe .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
   footer { margin-top: 56px; font-size: 14px; color: var(--faint); }
-  @media (max-width: 480px) { .posts a { flex-direction: column; gap: 4px; } }
+  .month > a { padding: 24px 0 18px; border-bottom: 0; }
+  .month .tag { display: inline-block; margin-bottom: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #8a5a0f; background: #fbf0dc; border-radius: 999px; padding: 2px 10px; }
+  .month .title { font-size: 24px; }
+  .weeks { margin: 0 0 0 116px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+  .weeks summary { width: fit-content; font-size: 15px; color: var(--faint); cursor: pointer; list-style: none; transition: color 0.2s ease; }
+  .weeks summary::-webkit-details-marker { display: none; }
+  .weeks summary::before { content: "▸"; display: inline-block; width: 1em; color: var(--accent); transition: transform 0.2s ease; }
+  .weeks[open] summary::before { transform: rotate(90deg); }
+  .weeks summary:hover { color: var(--ink); }
+  .weeks ul { list-style: none; margin: 10px 0 0; padding: 0 0 0 16px; border-left: 2px solid var(--rule); }
+  .weeks a { padding: 10px 0; border-bottom: 0; }
+  .weeks .date { width: 96px; white-space: nowrap; }
+  .weeks .title { font-size: 17px; }
+  .weeks .summary { font-size: 14px; }
+  @media (max-width: 480px) { .posts a { flex-direction: column; gap: 4px; } .weeks { margin-left: 0; } }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header><img class="dot" src="/apple.svg" alt="" width="15" height="15"><a href="/">GoodApp Labs</a></header>
+  <header><img class="logo" src="/logo.svg" alt="" width="32" height="32"><a href="/">GoodApp Labs</a><img class="dot" src="/apple.svg" alt="" width="15" height="15"></header>
 
   <h1>Updates</h1>
   <p class="lede">Weekly notes on what we built, what we learned, and where we're headed.</p>
 
-  <!-- Newest first. Add each new post to the top of this list. -->
+  <!-- Signups go to /api/subscribe (worker.js). New posts are emailed with updates/send_update.py. -->
+  <div class="subscribe" id="subscribe">
+    <p><strong>Get new updates by email.</strong> Just a heads-up and a link when a new one is posted.</p>
+    <form action="/api/subscribe" method="post">
+      <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" autocomplete="email" required>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="done" role="status">Thanks, you're on the list! You'll get an email when the next update is posted.</p>
+    <p class="error" role="alert">That didn't work. Check the address and try again.</p>
+  </div>
+
+  <!-- Newest first. After adding a post, run: python3 updates/build_feed.py -->
+  <!-- Each monthly recap is a .month item, with the weekly posts it covers tucked under it (newest
+       first). New weekly posts go at the top as plain <li> items until their month's recap is out. -->
   <ul class="posts">
-    <li><a href="/updates/2026-10-23">
+    <li class="month"><a href="/updates/2026-10-23">
       <span class="date">Oct 23, 2026</span>
-      <span><span class="title">#5 · Month one: time flies when you're having fun!</span><span class="summary">Month 1 recap: Dream in a Jar in App Store review, HQ's 7 tools, where AI shines, and where my time goes.</span></span>
-    </a></li>
-    <li><a href="/updates/2026-10-16">
-      <span class="date">Oct 16, 2026</span>
-      <span><span class="title">#4 · Week four: execution week.</span><span class="summary">A fixed Inventor, journey-map research, Dream Jar success metrics, and Apple unblocks our launch.</span></span>
-    </a></li>
-    <li><a href="/updates/2026-10-09">
-      <span class="date">Oct 9, 2026</span>
-      <span><span class="title">#3 · Week three: building apps and announcing GAppL.</span><span class="summary">Waiting on Apple, a Dream Jar demo, and announcing GoodApp Labs on LinkedIn and YouTube.</span></span>
-    </a></li>
-    <li><a href="/updates/2026-10-02">
-      <span class="date">Oct 2, 2026</span>
-      <span><span class="title">#2 · Week two: building HQ.</span><span class="summary">LLC basics done, a new MacBook Pro, and three internal tools: Product Idea Hub, Expenses and Agent Usage.</span></span>
-    </a></li>
-    <li><a href="/updates/2026-09-25">
-      <span class="date">Sep 25, 2026</span>
-      <span><span class="title">#1 · Week one: we're off.</span><span class="summary">Business set up and funded, a logo, and our first idea-finding agents running.</span></span>
-    </a></li>
+      <span><span class="tag">Month 1 recap</span><span class="title">#5 · Month one: time flies when you're having fun!</span><span class="summary">Month 1 recap: Dream in a Jar in App Store review, HQ's 7 tools, where AI shines, and where my time goes.</span></span>
+    </a>
+      <details class="weeks">
+        <summary>Weekly posts from this month (4)</summary>
+        <ul>
+          <li><a href="/updates/2026-10-16">
+            <span class="date">Oct 16, 2026</span>
+            <span><span class="title">#4 · Week four: execution week.</span><span class="summary">A fixed Inventor, journey-map research, Dream Jar success metrics, and Apple unblocks our launch.</span></span>
+          </a></li>
+          <li><a href="/updates/2026-10-09">
+            <span class="date">Oct 9, 2026</span>
+            <span><span class="title">#3 · Week three: building apps and announcing GAppL.</span><span class="summary">Waiting on Apple, a Dream Jar demo, and announcing GoodApp Labs on LinkedIn and YouTube.</span></span>
+          </a></li>
+          <li><a href="/updates/2026-10-02">
+            <span class="date">Oct 2, 2026</span>
+            <span><span class="title">#2 · Week two: building HQ.</span><span class="summary">LLC basics done, a new MacBook Pro, and three internal tools: Product Idea Hub, Expenses and Agent Usage.</span></span>
+          </a></li>
+          <li><a href="/updates/2026-09-25">
+            <span class="date">Sep 25, 2026</span>
+            <span><span class="title">#1 · Week one: we're off.</span><span class="summary">Business set up and funded, a logo, and our first idea-finding agents running.</span></span>
+          </a></li>
+        </ul>
+      </details>
+    </li>
   </ul>
 
-  <footer>© 2026 GoodApp Labs LLC · Internal, please don't share</footer>
+  <footer>© 2026 GoodApp Labs LLC · <a href="/updates/feed.xml">RSS</a></footer>
 </div>
+<script>
+  // Subscribe without leaving the page. Without JS the form posts normally and the worker
+  // redirects back here with ?subscribed=1 (or 0).
+  const box = document.getElementById("subscribe");
+  const form = box.querySelector("form");
+  const shown = new URLSearchParams(location.search).get("subscribed");
+  if (shown) box.classList.add(shown === "1" ? "sent" : "failed");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    box.classList.remove("failed");
+    try {
+      const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      box.classList.add(res.ok ? "sent" : "failed");
+    } catch {
+      box.classList.add("failed");
+    }
+  });
+</script>
 </body>
 </html>
