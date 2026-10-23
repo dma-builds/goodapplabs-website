@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Month 1 Update · GoodApp Labs</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Figtree:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f1; --ink: #191714; --muted: #5f5850; --faint: #847c72; --rule: #ece5d8; --accent: #d98a17; --card: #fff; --gold-soft: #fbf0dc; --gold-ink: #8a5a0f; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--ink); }
+  a:hover { color: var(--accent); }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 32px 20px 72px; }
+  header { display: flex; align-items: center; gap: 11px; margin-bottom: 56px; }
+  header .dot { display: block; margin-top: -1px; }
+  header a { font-size: 16px; font-weight: 500; letter-spacing: -0.015em; text-decoration: none; }
+  .meta { font-size: 14px; color: var(--faint); letter-spacing: 0.02em; text-transform: uppercase; margin: 0 0 12px; }
+  h1 { font-family: 'Figtree', Helvetica, sans-serif; font-size: clamp(36px, 7vw, 52px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 24px; }
+  h2 { font-family: 'Figtree', Helvetica, sans-serif; font-size: 22px; font-weight: 600; letter-spacing: -0.015em; margin: 48px 0 12px; }
+  h3 { font-family: 'Figtree', Helvetica, sans-serif; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin: 32px 0 8px; display: flex; align-items: center; gap: 10px; }
+  h3 .n { color: var(--accent); }
+  h3 img { width: 32px; height: 32px; border-radius: 8px; }
+  p, ul { margin: 0 0 16px; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  .tldr { background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 10px; padding: 18px 22px; color: var(--muted); }
+  .tldr strong { color: var(--ink); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+  .stat { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; }
+  .stat .k { font-size: 13px; color: var(--faint); letter-spacing: 0.04em; text-transform: uppercase; }
+  .stat b { display: block; font-family: 'Figtree', Helvetica, sans-serif; font-size: 26px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-top: 2px; }
+  .stat span { display: block; font-size: 15px; line-height: 1.45; color: var(--muted); margin-top: 6px; }
+  .stat .odds { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 600; border-radius: 999px; padding: 2px 10px; background: var(--gold-soft); color: var(--gold-ink); }
+  .stat .odds.low { background: #f1ece4; color: var(--faint); }
+  .tools { display: grid; gap: 8px; margin: 12px 0 16px; padding: 0; list-style: none; }
+  .tools li { margin: 0; background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 16px; font-size: 16px; color: var(--muted); }
+  .tools ul { margin: 6px 0 0; padding-left: 1.2em; }
+  .tools ul li { background: none; border: 0; padding: 0; margin: 4px 0 0; border-radius: 0; font-size: 16px; }
+  .tools li b { display: block; color: var(--ink); font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .auto { margin: 16px 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+  .auto li { margin: 0; }
+  .auto .row { display: grid; grid-template-columns: 150px 1fr 48px; align-items: center; gap: 12px; font-size: 16px; }
+  .auto .name { font-weight: 600; }
+  .auto .bar { height: 10px; border-radius: 999px; background: #efe7d8; overflow: hidden; }
+  .auto .bar i { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #f2b632, #e39a1c); }
+  .auto .bar.tbd { background: repeating-linear-gradient(90deg, #e5dccb 0 6px, transparent 6px 12px); }
+  .auto .pct { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; font-size: 15px; }
+  .auto .pct.tbd { color: var(--faint); font-weight: 500; }
+  .auto .note { font-size: 15px; color: var(--muted); line-height: 1.5; margin: 4px 0 0 162px; }
+  @media (max-width: 520px) { .auto .row { grid-template-columns: 1fr 48px; } .auto .bar { grid-column: 1 / -1; grid-row: 2; } .auto .note { margin-left: 0; } }
+  .table-wrap { overflow-x: auto; margin: 16px 0; border: 1px solid var(--rule); border-radius: 10px; background: var(--card); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 14px; border-top: 1px solid var(--rule); vertical-align: top; }
+  thead th { border-top: 0; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--faint); font-weight: 600; }
+  td.num, th.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  td.area { font-weight: 600; min-width: 130px; }
+  td.notes { color: var(--muted); min-width: 220px; }
+  figure { margin: 16px 0 24px; }
+  figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 10px; }
+  figcaption { font-size: 14px; color: var(--faint); margin-top: 8px; }
+  .embed { display: block; width: 100%; border: 0; background: #000; }
+  .embed.wide { aspect-ratio: 16 / 9; border-radius: 12px; }
+  .embed.tall { aspect-ratio: 9 / 16; max-width: 300px; border-radius: 22px; }
+  .signoff { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); color: var(--muted); }
+  footer { margin-top: 56px; font-size: 14px; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img class="dot" src="/apple.svg" alt="" width="15" height="15"><a href="/">GoodApp Labs</a></header>
+
+  <p class="meta">Update #5 · October 23, 2026 · Month 1 recap</p>
+  <h1>Month one: time flies when you're having fun!</h1>
+
+  <p class="tldr"><strong>TL;DR:</strong> I can't believe it's been a month since I started GAppL. We're on track or slightly ahead of where I wanted to be. The business is fully set up, our first app is in App Store review, and half of HQ's toolbox is built. I didn't expect to be working on our 2nd and 3rd projects yet, so that's bonus progress.</p>
+
+  <h2>What we got done this month</h2>
+
+  <h3><span class="n">1</span>The business</h3>
+  <p>All the admin and infrastructure is taken care of: registrations, taxes, a business bank account, equipment, and moving to an organization account with Apple. We also announced the LLC on <a href="https://lnkd.in/p/gtaSUQvf" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://www.youtube.com/watch?v=6xej_FKh9Qc" target="_blank" rel="noopener">YouTube</a>. It's wild to think that a month ago I still worked at Hope Street and the LLC didn't <em>really</em> exist.</p>
+
+  <h3><span class="n">2</span>HQ, our internal hub</h3>
+  <p>We built HQ to run our internal operations. It hosts 7 tools across 3 categories:</p>
+  <ul class="tools">
+    <li><b>Designing and building products</b>
+      <ul>
+        <li><strong>Product Idea Hub:</strong> generates product ideas</li>
+        <li><strong>Journey Maps:</strong> maps out user journeys</li>
+      </ul></li>
+    <li><b>Dream in a Jar</b>
+      <ul>
+        <li><strong>Dashboard:</strong> tracks our success metrics</li>
+        <li><strong>Launch checklist:</strong> pre-launch tasks shared between me and our agents</li>
+      </ul></li>
+    <li><b>Running the LLC</b>
+      <ul>
+        <li><strong>Expenses:</strong> tracks spending and tax notes</li>
+        <li><strong>Agent Usage:</strong> tracks what our agents cost</li>
+        <li><strong>Founder Time:</strong> analyzes how I spend my time</li>
+      </ul></li>
+  </ul>
+  <figure>
+    <a href="/updates/img/2026-10-23-hq.jpg"><img src="/updates/img/2026-10-23-hq.jpg" alt="HQ home page showing all seven tools"></a>
+  </figure>
+
+  <h3><span class="n">3</span><span>Dream in a Jar</span><img src="/dream-jar/icon.png" alt=""></h3>
+  <p>Dream in a Jar has been a joy to build. It's ready to ship and is in App Store review right now. Our main goal with our first app is learning: how to market, how to launch apps, and how to build with AI. By that measure, the project has already been a huge success! Of course, we're also hoping it succeeds in the market:</p>
+  <div class="stats">
+    <div class="stat"><span class="k">Retention</span><b>35%</b><span>of families come back within their first 2 weeks.</span><span class="odds">Reasonably likely</span></div>
+    <div class="stat"><span class="k">Viral growth</span><b>k ≥ 1</b><span>Each family brings in at least one more on its own.</span><span class="odds low">Less likely: it isn't designed to spread</span></div>
+  </div>
+  <p>If you haven't seen it yet, here's the demo I posted two weeks ago:</p>
+  <figure>
+    <iframe class="embed tall" src="https://www.youtube-nocookie.com/embed/8IN9nkZVOcA?rel=0" title="Dream in a Jar demo" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>
+  </figure>
+
+  <h3><span class="n">4</span>Projects #2 and #3</h3>
+  <p>We've started exploratory designs on two more apps:</p>
+  <ul>
+    <li><strong>NewJeff</strong> makes it simple for new cooks to build a cooking habit.</li>
+    <li><strong>An Ivy League coach</strong> (name TBD) helps A-students learn how to get into Ivy League schools.</li>
+  </ul>
+  <figure>
+    <iframe class="embed wide" src="https://www.youtube-nocookie.com/embed/522VEOcoAwQ?rel=0" title="NewJeff concept demo" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>
+    <figcaption>NewJeff concept demo</figcaption>
+  </figure>
+  <figure>
+    <a href="/updates/img/2026-10-23-ivy.jpg"><img src="/updates/img/2026-10-23-ivy.jpg" alt="Early Ivy designs: the intake welcome screen and the start of the intake conversation"></a>
+    <figcaption>The Ivy League coaching app (name TBD)</figcaption>
+  </figure>
+
+  <h2>Where AI shines, and where it struggles</h2>
+  <p>We're starting to see which parts of building a product AI can handle on its own. Overall, it feels pretty good: big parts of the build can be handed off to agents. The big unknown is automating marketing. I think that's what will really make or break the business model.</p>
+  <p>Here's how much of each stage AI can handle today:</p>
+  <ol class="auto">
+    <li><div class="row"><span class="name">Scouting</span><span class="bar"><i style="width:100%"></i></span><span class="pct">100%</span></div>
+      <p class="note">AI collects raw ideas and feedback from forums and app stores completely on its own.</p></li>
+    <li><div class="row"><span class="name">Inventing ideas</span><span class="bar"><i style="width:66%"></i></span><span class="pct">66%</span></div>
+      <p class="note">Still a struggle. AI gets close on the broader space, but picking out the truly insightful, magical opportunity is hard. I'm optimistic more tuning will get us there.</p></li>
+    <li><div class="row"><span class="name">Research</span><span class="bar"><i style="width:95%"></i></span><span class="pct">95%</span></div>
+      <p class="note">AI mapped user journeys surprisingly well, better than I could have on my own. Light feedback takes care of minor issues.</p></li>
+    <li><div class="row"><span class="name">Design</span><span class="bar"><i style="width:50%"></i></span><span class="pct">50%</span></div>
+      <p class="note">AI can't build good wireframes on its own and needs a lot of input. Luckily, we're good at this and enjoy it, and AI makes it much faster, more iterative and more fun.</p></li>
+    <li><div class="row"><span class="name">Build</span><span class="bar"><i style="width:75%"></i></span><span class="pct">75%</span></div>
+      <p class="note">Agents do basically all the building, but higher-level technical decisions need my testing and input. I hope to automate more with product manager agents that oversee the builders, though it hasn't slowed us down much so far.</p></li>
+    <li><div class="row"><span class="name">Marketing &amp; iteration</span><span class="bar tbd"></span><span class="pct tbd">TBD</span></div>
+      <p class="note">Not started yet, since nothing has launched. This is the big one.</p></li>
+  </ol>
+
+  <h2>Where my time goes</h2>
+  <p>One reason I was excited about this experiment is having AI handle the parts of the work I don't enjoy, so I can focus on what I enjoy and do best. Here's how I spend my time today, compared with where I'd like it to be long term:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Area</th><th class="num">Now</th><th class="num">Ideal</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="area">Idea evaluation</td><td class="num">5%</td><td class="num">5%</td><td class="notes"></td></tr>
+        <tr><td class="area">Design</td><td class="num">5%</td><td class="num">40%</td><td class="notes">The main change I want in month 2. It puts pressure on producing more high-quality ideas and research.</td></tr>
+        <tr><td class="area">Managing the build</td><td class="num">30%</td><td class="num">20%</td><td class="notes">Testing the product and problem-solving with coding agents.</td></tr>
+        <tr><td class="area">Growth &amp; marketing</td><td class="num">10%</td><td class="num">20%</td><td class="notes">We haven't started marketing, since nothing has officially launched yet.</td></tr>
+        <tr><td class="area">HQ tools</td><td class="num">25%</td><td class="num">10%</td><td class="notes">The early days need more time on tools and infrastructure. I expect this to drop over time.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Next month</h2>
+  <ul>
+    <li><strong>Build our marketing engine.</strong> Marketing Dream in a Jar is a great chance to set up our marketing operations in HQ. I'd feel really good if, by the end of next month, we have a highly automated marketing engine, with Dream in a Jar as the first mold. This is probably the single most important open question for the business.</li>
+    <li><strong>More time in design.</strong> That means improving the volume and quality of our product ideas. More inspiration means more design.</li>
+    <li><strong>Decide on Dream in a Jar.</strong> By the end of the month, I hope to know whether it's worth more energy, especially on growing virality. I'm also hoping to see a few tips come in, even if it's just a few bucks.</li>
+    <li><strong>A first build of the Ivy coaching app.</strong> I'm prioritizing it above NewJeff, even though NewJeff feels more fun, since I have a chance to test it with a high school student in December. The goal is a working intake and first experience by the end of the month.</li>
+  </ul>
+
+  <p class="signoff">David</p>
+
+  <footer>© 2026 GoodApp Labs LLC · Internal, please don't share</footer>
+</div>
+</body>
+</html>
