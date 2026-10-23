@@ -20,7 +20,11 @@
   .glow { position: fixed; inset: -10%; pointer-events: none; z-index: 0; animation: drift 22s ease-in-out infinite alternate;
     background: radial-gradient(110% 85% at 88% 108%, rgba(87,64,140,0.30), rgba(87,64,140,0) 62%), radial-gradient(85% 65% at 6% 102%, rgba(225,82,61,0.20), rgba(225,82,61,0) 66%); }
   header { position: relative; z-index: 1; padding: 28px 24px; max-width: 760px; margin: 0 auto; display: flex; align-items: center; gap: 11px; }
-  header i { width: 11px; height: 11px; border-radius: 50%; background: #e1523d; display: block; }
+  header .logo { display: block; margin-right: 3px; image-rendering: pixelated; }
+  header .dot { display: block; margin-top: -1px; animation: breathe 4.5s ease-in-out 1s infinite, glow 4.5s ease-in-out 1s infinite; }
+  header .nav { margin-left: auto; font-size: 15px; font-weight: 400; color: #5f5850; }
+  @keyframes glow { 0%, 100% { filter: drop-shadow(0 0 0 rgba(242,182,50,0)); } 50% { filter: drop-shadow(0 0 6px rgba(242,182,50,0.75)); } }
+  @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
   header a { font-size: 16px; font-weight: 500; letter-spacing: -0.015em; color: #191714; text-decoration: none; }
   main { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 40px 24px 88px; }
   .eyebrow { font-family: ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #847c72; margin: 0 0 16px; }
@@ -35,7 +39,7 @@
 </head>
 <body>
 <div class="glow"></div>
-<header><i></i><a href="/">GoodApp Labs</a></header>
+<header><a href="/"><img class="logo" src="/logo.svg" alt="GoodApp Labs" width="36" height="36"></a><a href="/">GoodApp Labs</a><img class="dot" src="/apple.svg" alt="" width="15" height="15"><a class="nav" href="/updates">Updates</a></header>
 <main>
   <p class="eyebrow">Dream Jar</p>
   <h1>Someone sent you a dream.</h1>

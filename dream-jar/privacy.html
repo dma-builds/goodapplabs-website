@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dream Jar — Privacy Policy</title>
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
 <script src="/support.js"></script>
 </head>
 <body>
@@ -12,6 +13,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
+  @keyframes glow { 0%, 100% { filter: drop-shadow(0 0 0 rgba(242,182,50,0)); } 50% { filter: drop-shadow(0 0 6px rgba(242,182,50,0.75)); } }
+  @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
   body { margin: 0; background: #faf7f1; }
   a { color: #e1523d; text-underline-offset: 3px; }
   a:hover { color: #191714; }
@@ -22,8 +25,10 @@
   <div style="position:fixed;inset:-10%;pointer-events:none;z-index:0;background:radial-gradient(110% 85% at 88% 108%, rgba(20,124,196,0.34), rgba(20,124,196,0) 62%), radial-gradient(85% 65% at 6% 102%, rgba(34,158,178,0.28), rgba(34,158,178,0) 66%);animation:drift 22s ease-in-out infinite alternate"></div>
 
   <header style="position:relative;z-index:1;padding:32px 44px;max-width:1240px;width:100%;box-sizing:border-box;margin:0 auto;display:flex;align-items:center;gap:11px">
-    <span style="width:11px;height:11px;border-radius:50%;background:#e1523d;display:block"></span>
+    <a href="/" style="display:block"><img src="/logo.svg" alt="GoodApp Labs" width="36" height="36" style="display:block;margin-right:3px;image-rendering:pixelated" /></a>
     <a href="/" style="font-size:16px;font-weight:500;letter-spacing:-0.015em;color:#191714;text-decoration:none">GoodApp Labs</a>
+    <img src="/apple.svg" alt="" width="15" height="15" style="display:block;margin-top:-1px;animation:breathe 4.5s ease-in-out 1s infinite, glow 4.5s ease-in-out 1s infinite" />
+    <a href="/updates" style="margin-left:auto;font-size:15px;color:#5f5850;text-decoration:none;transition:color 0.3s ease" style-hover="color:#c2740f">Updates</a>
   </header>
 
   <main style="position:relative;z-index:1;flex:1;max-width:1240px;width:100%;box-sizing:border-box;margin:0 auto;padding:48px 44px 88px">
