@@ -27,17 +27,44 @@
   @keyframes pop { 0% { transform: scale(0); } 70% { transform: scale(1.25); } 100% { transform: scale(1); } }
   @keyframes glow { 0%, 100% { filter: drop-shadow(0 0 0 rgba(242,182,50,0)); } 50% { filter: drop-shadow(0 0 6px rgba(242,182,50,0.75)); } }
   @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+  .projects { position: relative; }
+  .projects summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 6px; color: #5f5850; transition: color 0.3s ease; }
+  .projects summary::-webkit-details-marker { display: none; }
+  .projects summary:hover, .projects[open] summary { color: #c2740f; }
+  .projects summary svg { transition: transform 0.25s ease; }
+  .projects[open] summary svg { transform: rotate(180deg); }
+  .projects-menu { position: absolute; right: -12px; top: calc(100% + 12px); z-index: 10; min-width: 280px; padding: 8px; background: #fffdf9; border: 1px solid #ece5d8; border-radius: 14px; box-shadow: 0 12px 32px rgba(25,23,20,0.10); animation: fadeUp 0.25s cubic-bezier(0.22,1,0.36,1); }
+  .projects-menu a { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; text-decoration: none; color: #191714; transition: background 0.2s ease; }
+  .projects-menu a:hover { background: #f4eee3; color: #191714; }
+  .projects-menu img { display: block; border-radius: 9px; flex: none; }
+  .projects-name { display: block; font-weight: 500; }
+  .projects-desc { display: block; font-size: 13px; color: #847c72; margin-top: 2px; }
+  @media (max-width: 640px) {
+    .projects { position: static; }
+    .projects-menu { left: 16px; right: 16px; top: calc(100% - 18px); min-width: 0; }
+  }
   @keyframes drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-4%,-3%,0) scale(1.12); } }
 </style>
 </helmet>
 <div style="background:#faf7f1;color:#191714;font-family:'Instrument Sans','Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden">
   <div style="position:fixed;inset:-10%;pointer-events:none;z-index:0;background:radial-gradient(110% 85% at 88% 108%, rgba(20,124,196,0.55), rgba(20,124,196,0) 74%), radial-gradient(85% 65% at 6% 102%, rgba(34,158,178,0.45), rgba(34,158,178,0) 76%);animation:drift 22s ease-in-out infinite alternate"></div>
 
-  <header style="position:relative;z-index:1;padding:32px 44px;max-width:1240px;width:100%;box-sizing:border-box;margin:0 auto;display:flex;align-items:center;gap:11px;opacity:0;animation:fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s forwards">
+  <header style="position:relative;z-index:2;padding:32px 44px;max-width:1240px;width:100%;box-sizing:border-box;margin:0 auto;display:flex;align-items:center;gap:11px;opacity:0;animation:fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s forwards">
     <img src="/logo.svg" alt="" width="36" height="36" style="display:block;margin-right:3px;image-rendering:pixelated" />
-    <span style="font-size:16px;font-weight:500;letter-spacing:-0.015em">GoodApp Labs</span>
+    <span style="font-size:16px;font-weight:500;letter-spacing:-0.015em;white-space:nowrap">GoodApp Labs</span>
     <img src="/apple.svg" alt="" width="15" height="15" style="display:block;margin-top:-1px;animation:pop 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.5s backwards, breathe 4.5s ease-in-out 1.6s infinite, glow 4.5s ease-in-out 1.6s infinite" />
-    <a href="/updates" style="margin-left:auto;font-size:15px;color:#5f5850;text-decoration:none;transition:color 0.3s ease" style-hover="color:#c2740f">Updates</a>
+    <nav aria-label="Main" style="margin-left:auto;display:flex;align-items:center;gap:22px;font-size:15px;white-space:nowrap">
+      <details class="projects">
+        <summary>Projects <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <div class="projects-menu">
+          <a href="/dream-jar/">
+            <img src="/dream-jar/icon.png" alt="" width="36" height="36">
+            <span><span class="projects-name">Dream in a Jar</span><span class="projects-desc">Your child's dreams, painted and kept</span></span>
+          </a>
+        </div>
+      </details>
+      <a href="/updates" style="color:#5f5850;text-decoration:none;transition:color 0.3s ease" style-hover="color:#c2740f">Updates</a>
+    </nav>
   </header>
 
   <main style="position:relative;z-index:1;flex:1;display:flex;align-items:center;max-width:1240px;width:100%;box-sizing:border-box;margin:0 auto;padding:72px 44px 96px">
@@ -64,5 +91,14 @@
   </footer>
 </div>
 </x-dc>
+<script>
+  // Close the Projects menu on a click outside it or on Escape.
+  document.addEventListener("click", (e) => {
+    document.querySelectorAll("details.projects[open]").forEach((d) => { if (!d.contains(e.target)) d.open = false; });
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") document.querySelectorAll("details.projects[open]").forEach((d) => { d.open = false; });
+  });
+</script>
 </body>
 </html>
