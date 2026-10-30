@@ -5,9 +5,9 @@
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
-    // Only shared Dream Jar links /d/* (open counting) and the subscription API /api/* go
-    // through worker.js; everything else is served directly.
-    "run_worker_first": ["/d/*", "/api/*"]
+    // Only shared Dream Jar links /d/* (open counting), the subscription API /api/* and
+    // the web version's jar pages go through worker.js; everything else is served directly.
+    "run_worker_first": ["/d/*", "/api/*", "/dream-jar/try/jar/*"]
   },
   // Subscribers to /updates. Schema in migrations/.
   "d1_databases": [

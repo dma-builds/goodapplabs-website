@@ -1,4 +1,4 @@
-// Two jobs, everything else is served straight from the assets:
+// Three jobs, everything else is served straight from the assets:
 // 1. Shared Dream Jar links, /d/<share_id>: count the open, then show the Dream Jar page.
 // 2. Email subscriptions to /updates: /api/subscribe and /api/unsubscribe, backed by the DB
 //    (D1) binding. The emails themselves go out from David's Gmail via updates/send_update.py.
@@ -94,11 +94,21 @@ async function unsubscribe(request, env) {
 <form method="post"><button type="submit">Unsubscribe</button></form>`);
 }
 
+// 3. The web version of Dream Jar, /dream-jar/try (built from the app by its
+//    scripts/export-web.sh). Every page is a static file except a jar's own page,
+//    /dream-jar/try/jar/<id>, which exists once (as jar-page.html) for the app to fill in.
+const WEB_JAR_PATH = /^\/dream-jar\/try\/jar\/[^/]+\/?$/;
+
+function webJar(request, env) {
+  return env.ASSETS.fetch(new Request(new URL("/dream-jar/try/jar-page", request.url), request));
+}
+
 export default {
   async fetch(request, env, ctx) {
     const { pathname } = new URL(request.url);
     const share = SHARE_PATH.exec(pathname);
     if (share) return sharedDream(request, env, ctx, share[1]);
+    if (WEB_JAR_PATH.test(pathname)) return webJar(request, env);
     if (pathname === "/api/subscribe") return subscribe(request, env);
     if (pathname === "/api/unsubscribe") return unsubscribe(request, env);
     return env.ASSETS.fetch(request);
