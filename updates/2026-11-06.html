@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 6 Update · GoodApp Labs</title>
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="GoodApp Labs updates" href="/updates/feed.xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Figtree:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f1; --ink: #191714; --muted: #5f5850; --faint: #847c72; --rule: #ece5d8; --accent: #d98a17; --card: #fff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--ink); }
+  a:hover { color: var(--accent); }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 32px 20px 72px; }
+  header { display: flex; align-items: center; gap: 11px; margin-bottom: 56px; }
+  header .dot { display: block; margin-top: -1px; }
+  header .logo { display: block; margin-right: 3px; image-rendering: pixelated; }
+  header a { font-size: 16px; font-weight: 500; letter-spacing: -0.015em; text-decoration: none; }
+  .meta { font-size: 14px; color: var(--faint); letter-spacing: 0.02em; text-transform: uppercase; margin: 0 0 12px; }
+  h1 { font-family: 'Figtree', Helvetica, sans-serif; font-size: clamp(36px, 7vw, 52px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 24px; }
+  h2 { font-family: 'Figtree', Helvetica, sans-serif; font-size: 22px; font-weight: 600; letter-spacing: -0.015em; margin: 48px 0 12px; }
+  p, ul { margin: 0 0 16px; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  .tldr { background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 10px; padding: 18px 22px; color: var(--muted); }
+  .tldr strong { color: var(--ink); }
+  .party { margin: 32px 0 16px; padding: 28px 24px; text-align: center; background: #fbf0dc; border: 1px solid #f0d9ac; border-radius: 16px; color: #6b4a12; }
+  .party button { display: block; margin: 0 auto 8px; padding: 0; border: 0; background: none; font-size: 44px; line-height: 1.2; cursor: pointer; transition: transform 0.2s ease; }
+  .party button:hover { transform: scale(1.1) rotate(-6deg); }
+  .party h2 { margin: 0 0 8px; font-size: clamp(26px, 5vw, 32px); line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); }
+  .party p { margin: 0 0 18px; font-size: 17px; }
+  .party .get { display: inline-block; padding: 10px 20px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 16px; font-weight: 600; text-decoration: none; transition: background 0.2s ease; }
+  .party .get:hover { background: #c2740f; color: #fff; }
+  #confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; }
+  .signoff { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); color: var(--muted); }
+  footer { margin-top: 56px; font-size: 14px; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img class="logo" src="/logo.svg" alt="" width="32" height="32"><a href="/">GoodApp Labs</a><img class="dot" src="/apple.svg" alt="" width="15" height="15"></header>
+
+  <p class="meta">Update #7 · November 6, 2026</p>
+  <h1>Week six: Dream in a Jar is live! 🎉</h1>
+
+  <p class="tldr"><strong>TL;DR:</strong> A short week, mostly resting after the flu. But huge news: <strong>our first app is live on the App Store!</strong> 🎉 Being sick also gave me some time to reflect. I'm valuing heart over head, and we have a working mission: <strong>bringing dreams to life</strong>.</p>
+
+  <div class="party">
+    <button type="button" id="again" aria-label="More confetti">🎉</button>
+    <h2>Our first app is live on the App Store! 🫙✨</h2>
+    <p>This is a huge milestone for GoodApp Labs. We had to request an expedited review to get Apple to prioritize it, but Dream in a Jar v1 is officially out in the world! 🥳</p>
+    <a class="get" href="https://apps.apple.com/app/id6796370971" target="_blank" rel="noopener">See it on the App Store</a>
+  </div>
+
+  <h2>Next up for Dream in a Jar</h2>
+  <ul>
+    <li><strong>A better photo upload screen,</strong> based on feedback. Going out in the next build.</li>
+    <li><strong>Sign-in with Google and Apple.</strong> Also in the next build.</li>
+    <li><strong>A demo web version.</strong> We're building this too, and it'll be released soon.</li>
+    <li><strong>Designing v2: collaborative dreaming between two kids.</strong> It's a super fun feature, and it lets the app grow through families sharing with each other.</li>
+  </ul>
+
+  <h2>Valuing heart over head</h2>
+  <p>Being sick gave me some time to reflect this week.</p>
+  <p>I realized that for GoodApp Labs to be wildly successful, I have to value heart over head: to value the joy of creating, having fun, exploring and taking risky bets. Even if that sometimes means choosing what feels alive over what might seem like a surer thing financially.</p>
+  <p>This means going against what I said last week and continuing to iterate on Dream in a Jar, since I find joy and feel connected to the project even though the back-of-the-envelope math doesn't point to a huge monetization opportunity. It also means putting my marketing effort into what feels energizing and authentic, rather than what I think I <em>should</em> do because it might perform better.</p>
+  <p>It also got me thinking about our mission. I realized that solving problems creates working products, but bringing dreams to life is what creates joy and love. So there you go, our new working mission: <strong>bring dreams to life.</strong> 🫙✨</p>
+
+  <p class="signoff">David</p>
+
+  <footer>© 2026 GoodApp Labs LLC · <a href="/updates#subscribe">Get new updates by email</a></footer>
+</div>
+<script>
+  // Confetti for the first app launch: once on load (unless reduced motion is on), and on tapping the 🎉.
+  function confetti() {
+    const canvas = document.createElement("canvas");
+    canvas.id = "confetti";
+    canvas.setAttribute("aria-hidden", "true");
+    document.body.append(canvas);
+    const w = (canvas.width = innerWidth), h = (canvas.height = innerHeight), ctx = canvas.getContext("2d");
+    const colors = ["#d98a17", "#f6c453", "#e39a1c", "#8fd0f5", "#3f7d5a", "#f28b82"];
+    const bits = Array.from({ length: 180 }, () => ({
+      x: Math.random() * w, y: -20 - Math.random() * h * 0.8,
+      vx: (Math.random() - 0.5) * 2.4, vy: 2 + Math.random() * 3.5,
+      size: 6 + Math.random() * 7, spin: Math.random() * 6, vs: (Math.random() - 0.5) * 0.3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+    }));
+    (function frame() {
+      ctx.clearRect(0, 0, w, h);
+      let falling = false;
+      for (const b of bits) {
+        b.x += b.vx; b.y += b.vy; b.spin += b.vs;
+        if (b.y < h + 20) falling = true;
+        ctx.save();
+        ctx.translate(b.x, b.y);
+        ctx.rotate(b.spin);
+        ctx.fillStyle = b.color;
+        ctx.fillRect(-b.size / 2, -b.size / 3, b.size, b.size * 0.66);
+        ctx.restore();
+      }
+      if (falling) requestAnimationFrame(frame);
+      else canvas.remove();
+    })();
+  }
+  document.getElementById("again").addEventListener("click", confetti);
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) confetti();
+</script>
+</body>
+</html>
