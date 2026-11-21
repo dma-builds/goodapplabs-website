@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Update #8 · GoodApp Labs</title>
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="GoodApp Labs updates" href="/updates/feed.xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Figtree:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f1; --ink: #191714; --muted: #5f5850; --faint: #847c72; --rule: #ece5d8; --accent: #d98a17; --card: #fff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--ink); }
+  a:hover { color: var(--accent); }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 32px 20px 72px; }
+  header { display: flex; align-items: center; gap: 11px; margin-bottom: 56px; }
+  header .dot { display: block; margin-top: -1px; }
+  header .logo { display: block; margin-right: 3px; image-rendering: pixelated; }
+  header a { font-size: 16px; font-weight: 500; letter-spacing: -0.015em; text-decoration: none; }
+  .meta { font-size: 14px; color: var(--faint); letter-spacing: 0.02em; text-transform: uppercase; margin: 0 0 12px; }
+  h1 { font-family: 'Figtree', Helvetica, sans-serif; font-size: clamp(36px, 7vw, 52px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 24px; }
+  h2 { font-family: 'Figtree', Helvetica, sans-serif; font-size: 22px; font-weight: 600; letter-spacing: -0.015em; margin: 48px 0 12px; }
+  h3 { font-family: 'Figtree', Helvetica, sans-serif; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin: 28px 0 8px; }
+  p, ul { margin: 0 0 16px; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  .tldr { background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 10px; padding: 18px 22px; color: var(--muted); }
+  .tldr strong { color: var(--ink); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+  .stat { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; }
+  .stat .k { font-size: 13px; color: var(--faint); letter-spacing: 0.04em; text-transform: uppercase; }
+  .stat b { display: block; font-family: 'Figtree', Helvetica, sans-serif; font-size: 30px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; margin-top: 2px; }
+  .dist { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; margin: 0 0 16px; }
+  .dist .k { margin: 0 0 10px; font-size: 13px; color: var(--faint); letter-spacing: 0.04em; text-transform: uppercase; }
+  .dist .row { display: grid; grid-template-columns: 64px 1fr auto; align-items: center; gap: 12px; padding: 6px 0; font-size: 16px; }
+  .dist .amt { font-family: 'Figtree', Helvetica, sans-serif; font-weight: 600; }
+  .dist .cells { display: flex; gap: 4px; }
+  .dist .cells i { width: 22px; height: 22px; border-radius: 5px; background: var(--c); }
+  .dist .dud .cells i { background: none; border: 2px dashed #d8cdb9; }
+  .dist .n { color: var(--muted); font-variant-numeric: tabular-nums; }
+  figure { margin: 16px 0 24px; }
+  figure img { display: block; width: 100%; max-width: 360px; height: auto; border-radius: 14px; box-shadow: 0 6px 24px rgba(52, 33, 82, 0.18); }
+  figcaption { font-size: 14px; color: var(--faint); margin-top: 10px; }
+  .signoff { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); color: var(--muted); }
+  footer { margin-top: 56px; font-size: 14px; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img class="logo" src="/logo.svg" alt="" width="32" height="32"><a href="/">GoodApp Labs</a><img class="dot" src="/apple.svg" alt="" width="15" height="15"></header>
+
+  <p class="meta">Update #8 · November 20, 2026</p>
+  <h1>Back on my feet.</h1>
+
+  <p class="tldr"><strong>TL;DR:</strong> I'm back after a few tough weeks recovering from back-to-back flu. We started a new app, <strong>The Ivy Quiz</strong>, Dream in a Jar is getting a feature where you clink phones to make shared dreams, and I've had a few big unlocks on marketing, including <strong>cutting my ship target in half</strong>.</p>
+
+  <p>I'm back after taking a few tough weeks off to recover from back-to-back flu, so I'm keeping this update on the simpler side today.</p>
+
+  <h2>A new project: The Ivy Quiz</h2>
+  <p>I started working on The Ivy Quiz, an app that helps A students get a sense of how they'd rate in a mock college interview, and what they can do to increase their odds of getting into an Ivy League–tier school.</p>
+
+  <h2>Dream in a Jar: clinking dreams</h2>
+  <p>I'm working on a feature where parents and kids can clink their phones together to make shared dreams. It's not in TestFlight yet, but it's coming out super cute. 🫙🥂🫙 The hope is that it encourages people to share and use the app in person.</p>
+  <figure>
+    <img src="/updates/img/2026-11-20-shared-dream.jpg" alt="A watercolor dream of two kids ice skating hand in hand under the stars, with kangaroos around them. Below: Yulan: “I want to go ice skating!” Kinlan: “I want to go to Australia!”" width="720" height="1222" loading="lazy">
+    <figcaption>A shared dream: Yulan wants to go ice skating, and Kinlan wants to go to Australia.</figcaption>
+  </figure>
+
+  <h2>Unlocks on marketing</h2>
+  <p>There have been several here.</p>
+
+  <h3>1. Marketing as a way to serve</h3>
+  <p>I asked myself why it's been so hard to get to marketing, and found myself reading <em>This is Marketing</em> by Seth Godin. It has several life-altering philosophies that helped me reframe marketing from “advertising” to a way to serve others and change the world.</p>
+
+  <h3>2. I was wrong about Fable</h3>
+  <p>I initially thought Claude Fable wouldn't do well at things that require human judgment, like marketing campaigns and design, because I thought thinking was the enemy of that kind of work. I also ignored it because I didn't want to spend down my tokens so fast. But I was wrong.</p>
+  <p>I once had Claude Opus write up a marketing strategy doc, and it just wasn't good. This time I asked Fable to write one using the teachings of <em>This is Marketing</em>. I gotta say, <a href="/updates/dream-jar-marketing-strategy">it's compelling</a>, and it makes me excited to work on marketing for Dream in a Jar.</p>
+
+  <h3>3. Fewer apps, higher bar</h3>
+  <p>I realized marketing is going to take a lot more time than I thought, so I might need more time with each project. I'm updating our goals: cutting my ship target in half, and aiming for a higher success rate.</p>
+  <div class="stats">
+    <div class="stat"><span class="k">2027</span><b>Ship 4 apps</b></div>
+    <div class="stat"><span class="k">2028</span><b>Ship 8 apps</b></div>
+  </div>
+  <div class="dist" role="table" aria-label="Target outcomes for 12 apps">
+    <p class="k">Target revenue after 2 years, for those 12 apps · 75% hit rate</p>
+    <div class="row" role="row"><span class="amt" role="cell">$1M</span><span class="cells" style="--c:#a8620a" aria-hidden="true"><i></i></span><span class="n" role="cell">1 app · 8%</span></div>
+    <div class="row" role="row"><span class="amt" role="cell">$200k</span><span class="cells" style="--c:#d98a17" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="n" role="cell">4 apps · 33%</span></div>
+    <div class="row" role="row"><span class="amt" role="cell">$50k</span><span class="cells" style="--c:#f2c46b" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="n" role="cell">4 apps · 33%</span></div>
+    <div class="row dud" role="row"><span class="amt" role="cell">Duds</span><span class="cells" aria-hidden="true"><i></i><i></i><i></i></span><span class="n" role="cell">3 apps · 25%</span></div>
+  </div>
+
+  <p class="signoff">David</p>
+
+  <footer>© 2026 GoodApp Labs LLC · <a href="/updates#subscribe">Get new updates by email</a></footer>
+</div>
+</body>
+</html>
