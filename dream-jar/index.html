@@ -8,7 +8,11 @@
 <meta property="og:title" content="Your dreams are precious.">
 <meta property="og:description" content="In families like ours, a child's dream is precious, and we take it seriously.">
 <meta property="og:site_name" content="Dream in a Jar">
-<meta property="og:image" content="https://goodapplabs.ai/dream-jar/images/say-a-dream.jpg">
+<meta property="og:image" content="https://goodapplabs.ai/dream-jar/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Your dreams are precious. Two brothers ice skating in Australia, painted inside a jar.">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffe9b8">
 <link rel="icon" href="/dream-jar/icon.png">
 <link rel="apple-touch-icon" href="/dream-jar/icon.png">
@@ -45,10 +49,15 @@
   .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 22px; }
   .brand { white-space: nowrap; display: flex; align-items: center; gap: 12px; font: 800 clamp(17px, 1.6vw, 20px)/1 var(--round); letter-spacing: -.01em; text-decoration: none; }
   .brand img { width: 40px; height: 40px; border-radius: 11px; }
+  .brand span { display: grid; gap: 4px; }
+  .brand a { text-decoration: none; }
+  .brand .by { font: 400 14px/1.1 var(--serif); letter-spacing: 0; opacity: .75; text-decoration: underline; text-decoration-color: transparent; transition: opacity .2s, text-decoration-color .2s; }
+  .brand .by:hover { opacity: 1; text-decoration-color: currentColor; }
   .get { font: 700 16px/1.2 var(--round); text-decoration: none; border: 1.5px solid currentColor; border-radius: 999px; padding: 8px clamp(14px, 1.6vw, 20px); white-space: nowrap; transition: background-color .3s, color .3s; }
   .get:hover { background: var(--fg); color: var(--wash); }
   .stage { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(20px, 3.5svh, 40px) clamp(24px, 5vw, 80px); align-items: center; align-content: center; padding-block: clamp(4px, 2svh, 32px) clamp(56px, 8svh, 110px); }
-  h1 { font-size: clamp(56px, min(8.6vw, 15.5svh), 142px); line-height: .94; letter-spacing: -.035em; text-wrap: initial; }
+  .say-it { container-type: inline-size; min-width: 0; }
+  h1 { font-size: clamp(44px, min(8.6vw, 15.5svh, 22.5cqi), 142px); line-height: .94; letter-spacing: -.035em; text-wrap: initial; }
   h1 span { display: block; white-space: nowrap; }
   .want { font-family: var(--hand); font-weight: 500; font-size: clamp(34px, min(4.3vw, 7svh), 62px); line-height: 1.12; margin-top: clamp(20px, 4svh, 48px); }
   .blank { position: relative; display: block; width: fit-content; max-width: 100%; min-width: min(100%, 9.4em); min-height: 1.25em; padding-bottom: .1em; white-space: nowrap; }
@@ -108,6 +117,7 @@
   .phone { justify-self: center; width: min(100%, 320px); }
   .phone video { width: 100%; aspect-ratio: 590 / 1278; border-radius: 44px; border: 9px solid #1d1430; background: #463372; object-fit: cover; box-shadow: 0 40px 80px -30px rgba(42, 28, 72, .55); }
   .phone figcaption { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; padding-inline: 8px; font-size: 15px; color: #4d5b62; }
+  .phone figcaption span { text-wrap: balance; }
   .phone button { appearance: none; border: 0; background: none; padding: 8px; font: inherit; color: inherit; text-decoration: underline; text-underline-offset: .2em; cursor: pointer; }
 
   /* Promise ---------------------------------------------------------- */
@@ -168,7 +178,7 @@
 <header class="hero" id="top">
   <div class="wrap">
     <div class="top">
-      <a class="brand" href="#top"><img src="/dream-jar/icon.png" alt="" width="40" height="40">Dream in a Jar</a>
+      <div class="brand"><img src="/dream-jar/icon.png" alt="" width="40" height="40"><span><a href="#top">Dream in a Jar</a><a class="by" href="/">by GoodApp Labs</a></span></div>
       <a class="get" href="https://apps.apple.com/us/app/dream-in-a-jar/id6796370971">Get the app</a>
     </div>
     <div class="stage">
@@ -230,7 +240,7 @@
       </div>
       <figure class="phone">
         <video id="demo" muted playsinline loop preload="metadata" poster="/dream-jar/images/demo-poster.webp" aria-label="The app hears a child say “I want to own a volleyball gym!”, brews the dream in a jar, and reveals a painting of the child in the gym"><source src="/dream-jar/images/demo.mp4" type="video/mp4"></video>
-        <figcaption><span>Filmed in the app, in real time</span><button id="demo-toggle" type="button">Play</button></figcaption>
+        <figcaption><span>Filmed in the app. Preview is sped up.</span><button id="demo-toggle" type="button">Play</button></figcaption>
       </figure>
     </div>
   </section>
@@ -338,7 +348,7 @@
   toggle.addEventListener('click', function () { held = !demo.paused; held ? demo.pause() : demo.play(); });
   demo.addEventListener('timeupdate', function () {
     steps.classList.add('synced');
-    var n = demo.currentTime < 3.1 ? 0 : demo.currentTime < 20.3 ? 1 : 2;
+    var n = demo.currentTime < 3.1 ? 0 : demo.currentTime < 9.4 ? 1 : 2;
     lines.forEach(function (l, k) { l.classList.toggle('now', k === n); });
   });
   if ('IntersectionObserver' in window) new IntersectionObserver(function (e) {
