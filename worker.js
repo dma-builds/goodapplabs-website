@@ -1,4 +1,6 @@
-// Three jobs, everything else is served straight from the assets:
+import { handleApi as cantopopApi } from "./cantopop-api.js";
+
+// Four jobs, everything else is served straight from the assets:
 // 1. Shared Dream Jar links, /d/<share_id>: count the open, then show the Dream Jar page.
 // 2. Email subscriptions to /updates: /api/subscribe and /api/unsubscribe, backed by the DB
 //    (D1) binding. The emails themselves go out from David's Gmail via updates/send_update.py.
@@ -94,6 +96,17 @@ async function unsubscribe(request, env) {
 <form method="post"><button type="submit">Unsubscribe</button></form>`);
 }
 
+// 4. CantoPOP (/cantopop/, the Cantonese app for David's son): its speech-to-text and story
+//    API, /cantopop/api/*. cantopop-api.js is built from the CantoPOP repo (npm run build:api);
+//    it needs the DEEPGRAM_API_KEY and GEMINI_API_KEY secrets.
+function cantopopAsset(request, env) {
+  return async (path) => {
+    const r = await env.ASSETS.fetch(new URL(`/cantopop/${path}`, request.url));
+    if (!r.ok) throw new Error(`asset ${path}: ${r.status}`);
+    return new Uint8Array(await r.arrayBuffer());
+  };
+}
+
 // 3. The web version of Dream Jar, /dream-jar/try (built from the app by its
 //    scripts/export-web.sh). Every page is a static file except a jar's own page,
 //    /dream-jar/try/jar/<id>, which exists once (as jar-page.html) for the app to fill in.
@@ -111,6 +124,9 @@ export default {
     if (WEB_JAR_PATH.test(pathname)) return webJar(request, env);
     if (pathname === "/api/subscribe") return subscribe(request, env);
     if (pathname === "/api/unsubscribe") return unsubscribe(request, env);
+    if (pathname.startsWith("/cantopop/api/")) {
+      return (await cantopopApi(request, env, cantopopAsset(request, env))) ?? new Response("Not found", { status: 404 });
+    }
     return env.ASSETS.fetch(request);
   },
 };

@@ -6,3 +6,4 @@ updates/build_feed.py
 migrations
 updates/send_update.py
 .gitignore
+cantopop-api.js
